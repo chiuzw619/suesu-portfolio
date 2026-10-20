@@ -28,8 +28,12 @@ npm run dev
 
 ## 發布到 GitHub Pages
 
-1. 在 GitHub 建立 repository，將此資料夾內容推送到 `main` 分支。
-2. 在 repository 的 **Settings → Pages → Build and deployment**，將 Source 設為 **GitHub Actions**。
-3. `.github/workflows/deploy.yml` 會自動建置並發布 `dist/`。
+網站已公開在 https://chiuzw619.github.io/suesu-portfolio/ ，由 `gh-pages` 分支提供。修改內容後執行：
+
+```bash
+npm run deploy
+```
+
+會重新建置並把 `dist/` 推送到 `gh-pages`，約一分鐘後網站更新。原始碼請另外 commit 並 push 到 `main`。
 
 Vite 使用相對路徑 `base: './'`，支援 `https://使用者名稱.github.io/倉庫名稱/`。

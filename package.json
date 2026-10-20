@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
-    "preview": "vite preview --host 127.0.0.1"
+    "preview": "vite preview --host 127.0.0.1",
+    "deploy": "npm run build && touch dist/.nojekyll && cd dist && git init -q -b gh-pages && git add -A && git commit -q -m 'Deploy site' && git push -f -q https://github.com/chiuzw619/suesu-portfolio.git gh-pages && rm -rf .git"
   },
   "dependencies": {
     "@fontsource/almarai": "^5.3.0",
