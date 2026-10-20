@@ -1,0 +1,106 @@
+@import "@fontsource/cinzel/400.css";
+@import "@fontsource/cinzel/700.css";
+@import "@fontsource/almarai/400.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/700.css";
+
+/* Reproduces the Wix desktop site: a fixed 980px column in which every element
+   is absolutely positioned at the coordinates measured from the original. */
+:root { color: #000; background: #fff; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #fff; }
+a { color: #000; text-decoration: none; }
+a:hover { color: #8b0000; }
+:focus-visible { outline: 2px solid #8b0000; outline-offset: 3px; }
+
+.wix { width: 100%; overflow-x: hidden; }
+.wix-col { position: relative; width: 980px; margin: 0 auto; }
+.wix-page-project, .wix-page-exhibition { font-family: "Helvetica Neue", Helvetica, Arial, "PingFang TC", sans-serif; }
+.wix-page-home, .wix-page-illustration, .wix-page-graphic-design, .wix-page-contact { font-family: "Times New Roman", Times, serif; }
+
+.a { position: absolute; margin: 0; }
+.a p, .a ul, .a h2, .a h3 { margin: 0; }
+
+/* Header and footer */
+.site-name { left: -7px; font-family: Cinzel, serif; font-size: 30px; line-height: 34px; letter-spacing: 1.5px; }
+.site-name-home { left: 0; top: 60px; width: 980px; text-align: center; font-family: Cinzel, serif; font-weight: 400; font-size: 50px; line-height: 70px; letter-spacing: 2.5px; }
+.site-nav { display: flex; }
+.site-nav a { display: flex; align-items: center; justify-content: center; height: 50px; font-family: Cinzel, serif; font-size: 16px; transition: color .2s; }
+.top-button { left: 820px; display: flex; align-items: center; justify-content: center; width: 153px; height: 40px; box-sizing: border-box; border: 1px solid #000; font-family: Cinzel, serif; font-size: 20px; }
+
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+.fade { animation: fadein 1.2s ease both; }
+
+/* Shared text helpers */
+.c { text-align: center; }
+.j { text-align: justify; }
+.r { text-align: right; }
+.w { color: #fff; }
+.red { color: #8b0000; }
+.s16 { font-size: 16px; line-height: 22.4px; }
+.s18 { font-size: 18px; line-height: 25.2px; }
+.s20 { font-size: 20px; line-height: 28px; }
+
+/* Project */
+.wix-project .a ul { padding-left: 22px; }
+.wix-project .h2 { font-size: 45px; line-height: 58px; font-weight: 400; }
+.wix-project .sec { font-family: Cinzel, serif; font-size: 25px; line-height: 35px; font-weight: 700; color: #8b0000; }
+.wix-project .cz { font-family: Cinzel, serif; font-size: 25px; line-height: 35px; font-weight: 400; color: #8b0000; text-align: center; }
+.wix-project .lab { font-family: Cinzel, serif; font-size: 18px; line-height: 25.2px; font-weight: 700; color: #8b0000; }
+.wix-project .note { font-size: 16px; line-height: 22.4px; font-style: italic; color: #8b0000; text-align: justify; }
+.wix-project .h30 { font-size: 30px; line-height: 42px; font-weight: 700; }
+
+/* Exhibition */
+.wix-exhibition .a ul { padding-left: 24px; }
+.wix-exhibition .h2 { left: -7px; width: 980px; font-size: 40px; line-height: 52px; font-weight: 400; text-align: center; }
+.wix-exhibition .al { font-family: Almarai, "PingFang TC", "Noto Sans TC", sans-serif; }
+.wix-exhibition .awards a { text-decoration: underline; }
+
+/* Illustration and Graphic Design */
+.ti { font-family: Cinzel, serif; font-size: 25px; line-height: 25px; letter-spacing: 1.25px; font-weight: 400; }
+.pl { font-family: Cinzel, serif; font-size: 20px; line-height: 20px; letter-spacing: 1px; font-weight: 400; }
+.tx { font-size: 16px; line-height: 20.8px; }
+.sm { font-size: 13px; line-height: 13px; letter-spacing: .65px; }
+.cap { font-size: 16px; line-height: 16px; text-align: center; }
+
+/* Contact */
+.wix-contact .a ul { padding-left: 24px; }
+.wix-contact .hd { font-size: 18px; line-height: 25.2px; font-weight: 400; color: #8b0000; }
+.wix-contact .cv { font-size: 15px; line-height: 21px; }
+.wix-contact .cv h3 { font-size: 16px; line-height: 21px; font-weight: 400; }
+
+/* Responsive: below the 980px column the absolute layout becomes a single
+   flowing column in source order. Cards grow with their text; .fig blocks keep
+   their internal layout and are scaled by App.vue; .desk items are desktop-only. */
+@media (max-width: 999px) {
+  .wix-col { width: auto; height: auto !important; padding: 24px 20px 48px; }
+  .page > .a, header .a { position: static; }
+  .page > .a { margin: 0 0 20px; }
+  .page > .a:not(.fig):not(.keep) { width: auto !important; height: auto !important; }
+  .page > img.a:not(.keep) { display: block; max-width: 100%; margin: 0 auto 20px; }
+  .page > img.keep { display: inline-block; margin: 0 12px 20px 0; vertical-align: middle; }
+  .page > h2.a { margin-top: 48px; }
+  .page [style*="white-space"] { white-space: normal !important; }
+  .j, .note, .r { text-align: left; }
+  .fig { position: relative !important; left: auto !important; top: auto !important; margin: 0 auto 20px; }
+  .card { padding: 20px !important; }
+  .card [style*="width"] { width: auto !important; }
+  .spacer { height: auto !important; }
+  .spacer img { position: static !important; display: block; width: 100% !important; height: auto !important; margin: 16px 0; }
+  .page > .yt { position: relative; left: auto !important; top: auto !important; aspect-ratio: 638 / 357; }
+  .desk { display: none; }
+
+  header { margin-bottom: 36px; text-align: center; }
+  .site-name-home { width: auto; font-size: 36px; line-height: 1.3; }
+  .site-name { font-size: 26px; line-height: 1.3; }
+  .site-nav { flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+  .site-nav a { width: auto !important; height: 40px; padding: 0 10px; font-size: 14px; }
+  .top-button { position: static; margin: 40px 0 0 auto; }
+
+  .wix-project h1.a, .wix-exhibition h1 { font-size: 32px !important; line-height: 1.3 !important; }
+  .wix-project .h2, .wix-exhibition .h2 { font-size: 30px; line-height: 1.25; }
+  .wix-project .h30 { font-size: 24px; line-height: 1.3; }
+  .wix-project .sec, .wix-project .cz { font-size: 22px; line-height: 1.4; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .fade { animation: none; } }
