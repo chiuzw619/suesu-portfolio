@@ -135,7 +135,7 @@ onBeforeUnmount(() => {
 
     <section class="blk">
       <h2 class="a h2" style="top: 1206px">Research Background</h2>
-      <img class="no-zoom a" :src="image('exhibition', 2)" alt="Demian book cover"
+      <img class="no-zoom a m-small" :src="image('exhibition', 2)" alt="Demian book cover"
         style="left: 43px; top: 1326px; width: 120px; height: 192px; object-fit: cover">
       <div class="a s16" style="left: 220px; top: 1364px; width: 753px">
         <p class="red" style="font-size: 18px">文獻研究：以心理學文本作為概念原型</p>

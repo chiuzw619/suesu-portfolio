@@ -867,12 +867,18 @@ html.night .award-name {
     max-width: 100%;
     margin: 0 auto 20px;
   }
-  .blk > video.a {
+  /* Core Concept loops and the Demian cover stay small and centred: the generic
+     "width: auto" rule above would otherwise blow them up to their file size. */
+  .page .blk > video.a.ar-video {
     display: block;
-    width: min(100%, 320px) !important;
+    width: min(70%, 260px) !important;
     height: auto !important;
     aspect-ratio: 1;
-    margin: 0 auto 12px;
+    margin: 12px auto 12px;
+  }
+  .page .blk > img.a.m-small {
+    width: 140px !important;
+    height: auto !important;
   }
   .blk > img.keep {
     display: inline-block;
