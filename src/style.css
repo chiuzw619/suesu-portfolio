@@ -6,9 +6,10 @@
 
 /* Reproduces the Wix desktop site: a fixed 980px column in which every element
    is absolutely positioned at the coordinates measured from the original. */
-/* --night (0–1, set by src/rain.js) blends the page from white to #252320. */
+/* --night (0–1, set by src/rain.js or src/stars.js) blends the page from white to
+   --night-color: #252320 for rain, deep space blue for Illustration's stars. */
 @property --night { syntax: "<number>"; inherits: true; initial-value: 0; }
-:root { --page-bg: color-mix(in srgb, #252320 calc(var(--night) * 100%), #fff); color: #000; background: var(--page-bg); transition: --night .8s ease; }
+:root { --page-bg: color-mix(in srgb, var(--night-color, #252320) calc(var(--night) * 100%), #fff); color: #000; background: var(--page-bg); transition: --night .8s ease; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--page-bg); }
 a { color: #000; text-decoration: none; }
@@ -56,14 +57,25 @@ a:hover { color: #8b0000; }
 /* Night mode (src/rain.js): Home's illustration hover and the Exhibition video
    turn the page #252320 with a rain canvas behind the column's content. */
 .wix-col { z-index: 0; }
-.rain { position: fixed; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
+.rain, .sky { position: fixed; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
 .home-art { cursor: pointer; }
 .wix-col, .wix-col a { transition: color .8s ease; }
 html.night .wix-col, html.night .wix-col a { color: #f3efe6; }
 html.night .wix-col a:hover { color: #c9a27e; }
+/* Captions laid over (or half over) white artwork: white text blended with
+   difference reads dark on the artwork and light on the night background. */
+html.night .wix-col .on-art { color: #fff; mix-blend-mode: difference; }
+/* Transparent line drawings turn into white lines on a dark background (night
+   mode, and always in the lightbox). */
+.line-art { transition: filter .8s ease; }
+html.night .wix-col .line-art, .lb-figure img.line-art { filter: invert(.94); }
 html.night .red, html.night .wix-col [style*="#8b0000"] { color: #e0a090 !important; }
 
 /* Lightbox (ImageLightbox.vue): night-mode colours, thin-line controls. */
+/* Cards and postcards (Illustration) sit on the page like a printed card, with a
+   soft drop shadow that deepens slightly on hover. */
+.framed { box-shadow: 0 16px 18px -12px rgba(0, 0, 0, .55), 0 2px 6px rgba(0, 0, 0, .12); transition: transform .3s ease, box-shadow .3s ease; }
+.framed:hover { transform: translateY(-3px); box-shadow: 0 22px 24px -14px rgba(0, 0, 0, .55), 0 4px 10px rgba(0, 0, 0, .14); }
 .zoomable { cursor: zoom-in; }
 .zoomable:focus-visible { outline-offset: 4px; }
 .lightbox { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; background: rgba(37, 35, 32, .94); color: #f3efe6; }
@@ -130,7 +142,27 @@ html.custom-cursor, html.custom-cursor * { cursor: none !important; }
 .wix-exhibition .a ul { padding-left: 24px; }
 .wix-exhibition .h2 { left: -7px; width: 980px; font-size: 40px; line-height: 52px; font-weight: 400; text-align: center; }
 .wix-exhibition .al { font-family: Almarai, "PingFang TC", "Noto Sans TC", sans-serif; }
-.wix-exhibition .awards a { text-decoration: underline; }
+/* Exhibition awards: three centred columns split by hairlines, in the site's
+   type (Cinzel kicker, plain award name). Each opens the award page in a new
+   tab; hovering draws the same underline as the topbar. */
+.awards-label { margin: 0 0 18px !important; font-family: Cinzel, serif; font-size: 14px; letter-spacing: 3px; text-align: center; color: #8b0000; }
+.awards-list { display: grid; grid-template-columns: repeat(3, 1fr); }
+.award { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 2px 20px; text-align: center; }
+.award + .award { border-left: 1px solid rgba(0, 0, 0, .18); }
+.award-org { font-family: Cinzel, serif; font-size: 15px; letter-spacing: 1px; }
+.award-name { font-size: 14px; line-height: 20px; color: #555; transition: color .2s; }
+.award-name { position: relative; }
+.award-name::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+.award-arrow { margin-left: 8px; fill: none; stroke: #8b0000; stroke-width: 1.2; vertical-align: 2px; transition: transform .25s; }
+.award:hover .award-name { color: #8b0000; }
+.award:hover .award-name::after { transform: scaleX(1); }
+.award:hover .award-arrow { transform: translate(2px, -2px); }
+html.night .award + .award { border-left-color: rgba(243, 239, 230, .25); }
+html.night .award-name { color: #bdb7ad; }
+@media (max-width: 999px) {
+  .awards-list { grid-template-columns: 1fr; gap: 18px; }
+  .award + .award { border-left: 0; }
+}
 .flow-line { transform: scaleX(0); transform-origin: left; transition: transform 2s ease-in-out; }
 .flow-dot { transform: scale(0); transition: transform .45s cubic-bezier(.3, 1.6, .5, 1) calc(var(--i) * .5s); }
 .flow-label { opacity: 0; transform: translateY(8px); transition: opacity .5s ease calc(var(--i) * .5s), transform .5s ease calc(var(--i) * .5s); }

@@ -29,7 +29,7 @@ import { image } from '../site'
 <img class="a" :src="image('project', 1)" alt="Conceptual framework: research background, primary research question, core theoretical dimensions and research design" style="left: 56px; top: 1465px; width: 854px; height: 571px; object-fit: cover">
 <p class="a s18 j" style="left: 218px; top: 2057px; width: 530px">Mapping the research logic from global luxury evolution to Taiwanese Gen Z's cultural perception across six theoretical dimensions.</p>
 <h3 class="a sec" style="left: 209px; top: 2276px; width: 552px">Early vs. Late Generation Z Perceptions</h3>
-<p class="a s20" style="left: 165px; top: 2359px; width: 640px; font-weight: 700">Early Gen Z (18-24) Scores Higher Across All Experiential Dimensions</p>
+<p class="a s20 c" style="left: -57px; top: 2359px; width: 1080px; font-weight: 700; white-space: nowrap">Early Gen Z (18-24) Scores Higher Across All Experiential Dimensions</p>
 <img class="a" :src="image('project', 2)" alt="Bar chart of mean scores for Early and Late Gen Z across six dimensions" style="left: 28px; top: 2411px; width: 910px; height: 496px; object-fit: cover">
 <p class="a note" style="left: 416px; top: 2924px; width: 557px">Statistical Note: 5-point Likert scale (1 = Strongly Disagree, 5 = Strongly Agree). p &lt; 0.05 indicates a statistically significant group difference; the smaller the p-value, the stronger the evidence of a meaningful difference.<br>( p &lt; 0.05: Significant difference ;p &lt; 0.001: Very strong evidence of difference)</p>
 <div class="a s18" style="left: 65px; top: 3077px; width: 836px">
@@ -41,7 +41,7 @@ import { image } from '../site'
 <p>Early Gen Z responds strongly to visual and sensory appeal, while deeper cultural meaning becomes increasingly important for sustained engagement across age groups.</p>
 </div>
 <h3 class="a sec" style="left: 310px; top: 3537px; width: 345px">Correlation Divergence</h3>
-<p class="a s20" style="left: 88px; top: 3620px; width: 789px; font-weight: 700">Cultural Understanding Drives Engagement Strongest in Older Gen Z (r = 0.93 vs 0.80)</p>
+<p class="a s20 c" style="left: -57px; top: 3620px; width: 1080px; font-weight: 700; white-space: nowrap">Cultural Understanding Drives Engagement Strongest in Older Gen Z (r = 0.93 vs 0.80)</p>
 <img class="a" :src="image('project', 3)" alt="Pearson correlation comparison across Gen Z sub-groups" style="left: 47px; top: 3667px; width: 871px; height: 507px; object-fit: cover">
 <p class="a note" style="left: 423px; top: 4196px; width: 536px">Statistical Note (r-value Interpretation): Based on Pearson’s correlation benchmark (Dancey &amp; Reidy, 2007), r ≥ 0.70 indicates a strong correlation, while r ≤ 0.39 indicates a weak correlation (all p &lt; 0.01).</p>
 <div class="a" style="left: 65px; top: 4322px; width: 827px; font-size: 19px; line-height: 26.6px">
@@ -260,7 +260,7 @@ import { image } from '../site'
 <p>&nbsp;</p>
 <p><b>Create a meaningful connection</b><br>Bring the two worlds together through design, storytelling and craftsmanship.</p>
 </div>
-<p class="a card s20 w" style="left: 98px; top: 15559px; width: 768px; height: 138px; padding: 26px 20px 0 93px; box-sizing: border-box; border: 1px solid #1d2cf3; border-radius: 5px; background: #5975a3">Strategic implication:<br>The goal is not to make the IP look luxurious.<br>It is to create a meaningful dialogue between the brand and the IP.</p>
+<p class="a card s20 w" style="left: 98px; top: 15559px; width: 768px; height: 138px; display: flex; align-items: center; padding: 0 20px 0 93px; box-sizing: border-box; border: 1px solid #1d2cf3; border-radius: 5px; background: #5975a3"><span>Strategic implication:<br>The goal is not to make the IP look luxurious.<br>It is to create a meaningful dialogue between the brand and the IP.</span></p>
 <h3 class="a h30" style="left: -7px; top: 15845px; width: 806px">03&nbsp; From Cultural Meaning to Personal Meaning</h3>
 <p class="a s20" style="left: -7px; top: 15899px; width: 768px">Make it personal</p>
 <p class="a s18" style="left: 99px; top: 15993px; width: 759px">Consumers connected cultural collaborations with their own memories, emotions and sense of identity.</p>
@@ -272,7 +272,7 @@ import { image } from '../site'
 <p>&nbsp;</p>
 <p><b>Identity</b><br>The design can become a way for consumers to express something about themselves.</p>
 </div>
-<p class="a card s20 w" style="left: 99px; top: 16506px; width: 768px; height: 110px; padding: 26px 20px 0 19px; box-sizing: border-box; border: 1px solid #1d2cf3; border-radius: 5px; background: #5975a3">Strategic implication:<br>The strongest collaborations give consumers something personal to connect with.</p>
+<p class="a card s20 w" style="left: 99px; top: 16506px; width: 768px; height: 110px; display: flex; align-items: center; padding: 0 20px 0 19px; box-sizing: border-box; border: 1px solid #1d2cf3; border-radius: 5px; background: #5975a3"><span>Strategic implication:<br>The strongest collaborations give consumers something personal to connect with.</span></p>
 <h3 class="a h30" style="left: -7px; top: 16795px; width: 750px">04 From Recognition To Personal Meaning</h3>
 <p class="a s18" style="left: 103px; top: 16904px; width: 697px">Luxury collaborations can create deeper engagement when they move beyond being recognised to being understood and personally experienced.</p>
 <p class="a card s20 c w" style="left: 29px; top: 16997px; width: 289px; height: 128px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; padding: 0 12px; border-radius: 16px; background: #fb8c34"><span><b>Familiarity</b><br>Gets attention.</span></p>

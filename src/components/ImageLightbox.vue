@@ -46,7 +46,7 @@ const onKey = (e) => {
 
 onMounted(() => {
   const els = [...document.querySelectorAll(SELECTOR)]
-  images.value = els.map((el) => ({ src: el.currentSrc || el.src, alt: el.alt }))
+  images.value = els.map((el) => ({ src: el.currentSrc || el.src, alt: el.alt, lineArt: el.classList.contains('line-art') }))
   els.forEach((el, i) => {
     el.classList.add('zoomable')
     el.tabIndex = 0
@@ -67,7 +67,7 @@ onBeforeUnmount(() => {
   <Transition name="lb">
     <div v-if="current" class="lightbox" role="dialog" aria-modal="true" :aria-label="current.alt || 'Image'" @click="onBackdropClick">
       <figure class="lb-figure">
-        <img :key="current.src" :src="current.src" :alt="current.alt">
+        <img :key="current.src" :src="current.src" :alt="current.alt" :class="{ 'line-art': current.lineArt }">
         <figcaption v-if="current.alt">{{ current.alt }}</figcaption>
       </figure>
       <button ref="closeButton" type="button" class="lb-close" aria-label="Close" @click="close"></button>

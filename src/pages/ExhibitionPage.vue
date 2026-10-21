@@ -83,23 +83,32 @@ onBeforeUnmount(() => {
       <p class="a c red"
         style="left: 168px; top: 415px; width: 630px; font-family: 'Times New Roman', Times, serif; font-size: 17px; line-height: 23.8px">
         Immersive Visual Exhibition | Augmented Reality | Journey of Self-Resonance</p>
-      <div class="a c awards" style="left: 57px; top: 558px; width: 851px; font-size: 15px; line-height: 21px">
-        <p>作品榮獲</p>
-        <p><a href="https://isarch.org/2023-isarch-digital-award-student/">ISARCH 2023 Digital Award — Exhibition
-            Winner</a>（國際競賽展覽類winner獎）</p>
-        <p><a href="https://dna.paris/social/zoom.php?eid=71-90619-23&amp;mibextid=Zxz2cZ">2023 DNA Paris Design Awards
-            Interactive Design Honorable Mention</a></p>
-        <p><a href="https://www.moe-idc.org/Works/Content/2033">台灣IDC設計戰國策 113年度教育部國際競賽計畫 二等獎</a>及Yahoo新聞等多家媒體報導</p>
+      <div class="a awards" style="left: 57px; top: 548px; width: 851px">
+        <p class="awards-label">作品榮獲</p>
+        <div class="awards-list">
+          <a class="award" href="https://isarch.org/2023-isarch-digital-award-student/" target="_blank" rel="noopener">
+            <span class="award-org">ISARCH 2023<svg class="award-arrow" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8L8 2M3 2h5v5" /></svg></span>
+            <span class="award-name">Digital Award — Exhibition Winner</span>
+          </a>
+          <a class="award" href="https://dna.paris/social/zoom.php?eid=71-90619-23&amp;mibextid=Zxz2cZ" target="_blank" rel="noopener">
+            <span class="award-org">DNA Paris 2023<svg class="award-arrow" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8L8 2M3 2h5v5" /></svg></span>
+            <span class="award-name">Interactive Design Honorable Mention</span>
+          </a>
+          <a class="award" href="https://www.moe-idc.org/Works/Content/2033" target="_blank" rel="noopener">
+            <span class="award-org">台灣 IDC 設計戰國策<svg class="award-arrow" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8L8 2M3 2h5v5" /></svg></span>
+            <span class="award-name">113 年度教育部國際競賽計畫 二等獎</span>
+          </a>
+        </div>
       </div>
       <img class="a" :src="image('exhibition', 1)" alt="The Echo of Lodestar exhibition key visual"
-        style="left: -7px; top: 671px; width: 980px; height: 383px; object-fit: cover">
+        style="left: -7px; top: 701px; width: 980px; height: 383px; object-fit: cover">
     </section>
 
     <section class="blk">
-      <h2 class="a h2" style="top: 1176px">Research Background</h2>
+      <h2 class="a h2" style="top: 1206px">Research Background</h2>
       <img class="no-zoom a" :src="image('exhibition', 2)" alt="Demian book cover"
-        style="left: 43px; top: 1296px; width: 120px; height: 192px; object-fit: cover">
-      <div class="a s16" style="left: 220px; top: 1334px; width: 753px">
+        style="left: 43px; top: 1326px; width: 120px; height: 192px; object-fit: cover">
+      <div class="a s16" style="left: 220px; top: 1364px; width: 753px">
         <p class="red" style="font-size: 18px">文獻研究：以心理學文本作為概念原型</p>
         <p>&nbsp;</p>
         <p>
@@ -108,8 +117,8 @@ onBeforeUnmount(() => {
         <p>基於團隊對心理學領域的興趣，選定赫塞《德米安：徬徨少年時》作為核心概念，將書中對自我意識覺醒歷程的描寫，作為展覽敘事結構與五個心境階段的概念原型，以此進行主題的具象化轉譯。</p>
       </div>
       <img class="a" :src="image('exhibition', 3)" alt="Research background flowchart"
-        style="left: -75px; top: 1550px; width: 1117px; height: 391px; object-fit: cover">
-      <div class="a s16" style="left: -7px; top: 1965px; width: 753px">
+        style="left: -75px; top: 1580px; width: 1117px; height: 391px; object-fit: cover">
+      <div class="a s16" style="left: -7px; top: 1995px; width: 753px">
         <p>&nbsp;</p>
         <p class="red" style="font-size: 18px">案例研究：The Art of Bloom</p>
         <p>&nbsp;</p>
@@ -120,12 +129,12 @@ onBeforeUnmount(() => {
           Echo of Lodestar在展場動線規劃、AR互動觸發機制設計上的重要參考依據，也影響後續在觀展者主動探索、產出個人化星球圖鑑方面的核心體驗邏輯。</p>
       </div>
       <img class="no-zoom a" :src="image('exhibition', 4)" alt="The Art of Bloom exhibition reference"
-        style="left: 793px; top: 2003px; width: 235px; height: 159px; object-fit: cover">
+        style="left: 793px; top: 2033px; width: 235px; height: 159px; object-fit: cover">
     </section>
 
     <section class="blk">
-      <h2 class="a h2" style="top: 2291px; left: -9px">Our Story</h2>
-      <div class="a s16" style="left: 65px; top: 2418px; width: 832px">
+      <h2 class="a h2" style="top: 2321px; left: -9px">Our Story</h2>
+      <div class="a s16" style="left: 65px; top: 2448px; width: 832px">
         <p class="c red s18">How might we help people recognize and resonate with their own psychological journey of
           growth, through an immersive AR exhibition experience?</p>
         <p class="s18">&nbsp;</p>
@@ -158,7 +167,7 @@ onBeforeUnmount(() => {
         <p class="c">並結合後續行銷推廣規劃，打造完整的線上線下整合體驗，提升展覽的延續性與參與者的互動深度。</p>
       </div>
       <div class="a yt"
-        style="left: 43px; top: 2957px; width: 880px; height: 492px; overflow: hidden; background: #111111">
+        style="left: 43px; top: 2987px; width: 880px; height: 492px; overflow: hidden; background: #111111">
         <iframe v-if="playing" ref="player" @load="listen"
           :src="`https://www.youtube-nocookie.com/embed/${VIDEO}?autoplay=1&rel=0&enablejsapi=1`"
           title="The Echo of Lodestar" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
@@ -178,73 +187,73 @@ onBeforeUnmount(() => {
     </section>
 
     <section ref="core" class="blk">
-      <h2 class="a h2" style="top: 3600px">Core<br>Concept</h2>
+      <h2 class="a h2" style="top: 3630px">Core<br>Concept</h2>
       <img class="a" :src="image('exhibition', 5)" alt="Born AR animation"
-        style="left: 105px; top: 3767px; width: 197px; height: 198px; object-fit: cover">
-      <p class="a c s16" style="left: 88px; top: 3981px; width: 232px">突破 Born<br><br>互動效果：點擊蛋殼<br>飛鳥破殼而出</p>
+        style="left: 105px; top: 3797px; width: 197px; height: 198px; object-fit: cover">
+      <p class="a c s16" style="left: 88px; top: 4011px; width: 232px">突破 Born<br><br>互動效果：點擊蛋殼<br>飛鳥破殼而出</p>
       <img class="a" :src="image('exhibition', 6)" alt="Desire AR animation"
-        style="left: 643px; top: 3895px; width: 197px; height: 198px; object-fit: cover">
-      <p class="a c s16" style="left: 561px; top: 4108px; width: 363px">慾望 Desire<br><br>互動效果：點擊花叢<br>花朵逐一消散，剩下空殼</p>
+        style="left: 643px; top: 3925px; width: 197px; height: 198px; object-fit: cover">
+      <p class="a c s16" style="left: 561px; top: 4138px; width: 363px">慾望 Desire<br><br>互動效果：點擊花叢<br>花朵逐一消散，剩下空殼</p>
       <img class="a" :src="image('exhibition', 7)" alt="Reflection AR animation"
-        style="left: 280px; top: 4291px; width: 197px; height: 198px; object-fit: cover">
-      <p class="a c s16" style="left: 212px; top: 4505px; width: 335px">自我投射
+        style="left: 280px; top: 4321px; width: 197px; height: 198px; object-fit: cover">
+      <p class="a c s16" style="left: 212px; top: 4535px; width: 335px">自我投射
         Reflection<br><br>互動效果：點擊鏡面湖倒映出的自己，<br>兩個世界，實則是同一個自我</p>
       <img class="a" :src="image('exhibition', 8)" alt="Lonesome AR animation"
-        style="left: 656px; top: 4534px; width: 197px; height: 198px; object-fit: cover">
-      <p class="a c s16" style="left: 618px; top: 4746px; width: 274px">孤獨 Lonesome<br><br>互動效果：點擊雲霧<br>黑暗逐漸吞噬一切</p>
+        style="left: 656px; top: 4564px; width: 197px; height: 198px; object-fit: cover">
+      <p class="a c s16" style="left: 618px; top: 4776px; width: 274px">孤獨 Lonesome<br><br>互動效果：點擊雲霧<br>黑暗逐漸吞噬一切</p>
       <img class="a" :src="image('exhibition', 9)" alt="Sink AR animation"
-        style="left: 94px; top: 4681px; width: 197px; height: 198px; object-fit: cover">
-      <p class="a c s16" style="left: 62px; top: 4895px; width: 263px">沉淪 Sink<br><br>互動效果：點擊黑洞深淵<br>黑暗逐漸吞噬一切</p>
+        style="left: 94px; top: 4711px; width: 197px; height: 198px; object-fit: cover">
+      <p class="a c s16" style="left: 62px; top: 4925px; width: 263px">沉淪 Sink<br><br>互動效果：點擊黑洞深淵<br>黑暗逐漸吞噬一切</p>
     </section>
 
     <section class="blk">
-      <h2 class="a h2" style="top: 5133px; left: -6px">Interaction Process</h2>
-      <p class="a c s16 al" style="left: -9px; top: 5281px; width: 163px">領取平板<br>進入展場</p>
+      <h2 class="a h2" style="top: 5163px; left: -6px">Interaction Process</h2>
+      <p class="a c s16 al" style="left: -9px; top: 5311px; width: 163px">領取平板<br>進入展場</p>
       <img class="a" :src="image('exhibition', 10)" alt="Visitor collects a tablet"
-        style="left: -6px; top: 5380px; width: 156px; height: 162px; object-fit: cover">
-      <p class="a c s16 al" style="left: 194px; top: 5281px; width: 154px">互動操作提示以<br>文字顯示於設備</p>
+        style="left: -6px; top: 5410px; width: 156px; height: 162px; object-fit: cover">
+      <p class="a c s16 al" style="left: 194px; top: 5311px; width: 154px">互動操作提示以<br>文字顯示於設備</p>
       <img class="a" :src="image('exhibition', 11)" alt="Interaction hints on the device"
-        style="left: 192px; top: 5380px; width: 156px; height: 162px; object-fit: cover">
-      <p class="a c s16 al" style="left: 403px; top: 5282px; width: 154px">使用平板掃描展牆上的星球並互動</p>
+        style="left: 192px; top: 5410px; width: 156px; height: 162px; object-fit: cover">
+      <p class="a c s16 al" style="left: 403px; top: 5312px; width: 154px">使用平板掃描展牆上的星球並互動</p>
       <img class="a" :src="image('exhibition', 12)" alt="Scanning a planet on the exhibition wall"
-        style="left: 399px; top: 5380px; width: 161px; height: 162px; object-fit: cover">
-      <p class="a c s16 al" style="left: 607px; top: 5282px; width: 163px">體驗後用自己手機進行個人客製化星球問答</p>
+        style="left: 399px; top: 5410px; width: 161px; height: 162px; object-fit: cover">
+      <p class="a c s16 al" style="left: 607px; top: 5312px; width: 163px">體驗後用自己手機進行個人客製化星球問答</p>
       <img class="a" :src="image('exhibition', 13)" alt="Personalised planet quiz on a phone"
-        style="left: 609px; top: 5380px; width: 161px; height: 162px; object-fit: cover">
-      <p class="a c s16 al" style="left: 812px; top: 5281px; width: 163px">使用IG濾鏡與<br>周邊明信片進行互動</p>
+        style="left: 609px; top: 5410px; width: 161px; height: 162px; object-fit: cover">
+      <p class="a c s16 al" style="left: 812px; top: 5311px; width: 163px">使用IG濾鏡與<br>周邊明信片進行互動</p>
       <img class="a" :src="image('exhibition', 14)" alt="Instagram filter and postcards"
-        style="left: 815px; top: 5380px; width: 157px; height: 162px; object-fit: cover">
-      <svg class="a desk" style="left: 163px; top: 5295px" width="18" height="18" viewBox="0 0 18 18" fill="none"
+        style="left: 815px; top: 5410px; width: 157px; height: 162px; object-fit: cover">
+      <svg class="a desk" style="left: 163px; top: 5325px" width="18" height="18" viewBox="0 0 18 18" fill="none"
         stroke="#242323" stroke-width="1.2" aria-hidden="true">
         <path d="M1 9h15M11 4l5 5-5 5"></path>
       </svg>
-      <svg class="a desk" style="left: 364px; top: 5295px" width="18" height="18" viewBox="0 0 18 18" fill="none"
+      <svg class="a desk" style="left: 364px; top: 5325px" width="18" height="18" viewBox="0 0 18 18" fill="none"
         stroke="#242323" stroke-width="1.2" aria-hidden="true">
         <path d="M1 9h15M11 4l5 5-5 5"></path>
       </svg>
-      <svg class="a desk" style="left: 575px; top: 5295px" width="18" height="18" viewBox="0 0 18 18" fill="none"
+      <svg class="a desk" style="left: 575px; top: 5325px" width="18" height="18" viewBox="0 0 18 18" fill="none"
         stroke="#242323" stroke-width="1.2" aria-hidden="true">
         <path d="M1 9h15M11 4l5 5-5 5"></path>
       </svg>
-      <svg class="a desk" style="left: 785px; top: 5295px" width="18" height="18" viewBox="0 0 18 18" fill="none"
+      <svg class="a desk" style="left: 785px; top: 5325px" width="18" height="18" viewBox="0 0 18 18" fill="none"
         stroke="#242323" stroke-width="1.2" aria-hidden="true">
         <path d="M1 9h15M11 4l5 5-5 5"></path>
       </svg>
     </section>
 
     <section ref="usability" class="blk">
-      <h2 class="a h2" style="top: 5681px; left: -10px">Usability Testing of the Process</h2>
-      <div class="a fig" style="left: -7px; top: 5825px; width: 980px; height: 388px">
-        <div style="position: absolute; left: 7px; top: -5825px; width: 1100px">
-          <p class="a c s18 al" style="left: 23px; top: 5825px; width: 163px">測試必要性</p>
-          <p class="a c s18 al" style="left: 779px; top: 5825px; width: 163px">測試目標</p>
+      <h2 class="a h2" style="top: 5711px; left: -10px">Usability Testing of the Process</h2>
+      <div class="a fig" style="left: -7px; top: 5855px; width: 980px; height: 388px">
+        <div style="position: absolute; left: 7px; top: -5855px; width: 1100px">
+          <p class="a c s18 al" style="left: 23px; top: 5855px; width: 163px">測試必要性</p>
+          <p class="a c s18 al" style="left: 779px; top: 5855px; width: 163px">測試目標</p>
           <img class="a" :src="image('exhibition', 15)" alt="Usability testing flowchart"
-            style="left: -7px; top: 5882px; width: 980px; height: 331px; object-fit: cover">
+            style="left: -7px; top: 5912px; width: 980px; height: 331px; object-fit: cover">
         </div>
       </div>
       <img class="a" :src="image('exhibition', 16)" alt="Usability test with a tablet"
-        style="left: 584px; top: 6315px; width: 389px; height: 218px; object-fit: cover">
-      <div class="a s16 al" style="left: -7px; top: 6334px; width: 546px">
+        style="left: 584px; top: 6345px; width: 389px; height: 218px; object-fit: cover">
+      <div class="a s16 al" style="left: -7px; top: 6364px; width: 546px">
         <p class="red s18">測試對象與方法</p>
         <p>&nbsp;</p>
         <p>測試對象共6人，皆為首次接觸本展覽者，且對AR技術不熟悉，同時對自我探索或成長主題有興趣，藉此確保測試結果貼近真實觀展者的第一次體驗情境。</p>
@@ -254,10 +263,10 @@ onBeforeUnmount(() => {
     </section>
 
     <section class="blk">
-      <h2 class="a h2" style="top: 6720px">Exhibition Design</h2>
+      <h2 class="a h2" style="top: 6750px">Exhibition Design</h2>
       <img class="a" :src="image('exhibition', 17)" alt="Early exhibition space design"
-        style="left: -7px; top: 6941px; width: 323px; height: 254px; object-fit: cover">
-      <div class="a s16 al" style="left: 359px; top: 6901px; width: 614px">
+        style="left: -7px; top: 6971px; width: 323px; height: 254px; object-fit: cover">
+      <div class="a s16 al" style="left: 359px; top: 6931px; width: 614px">
         <p class="red s18">初期展場設計</p>
         <p>&nbsp;</p>
         <p>最初設想以開放式的空間設計為主，牆面獨立懸掛畫框，以純畫展的形式呈現作品。</p>
@@ -271,15 +280,15 @@ onBeforeUnmount(() => {
           <li>整合：初期畫框與說明立牌各自獨立陳列，團體改將畫作、手稿與文字整合於同一動線牆面，希望強調牆面即敘事的動線設計，也更加直觀。</li>
         </ul>
       </div>
-      <div class="a fig" style="left: -12px; top: 7271px; width: 352px; height: 288px">
-        <div style="position: absolute; left: 12px; top: -7271px; width: 1100px">
+      <div class="a fig" style="left: -12px; top: 7301px; width: 352px; height: 288px">
+        <div style="position: absolute; left: 12px; top: -7301px; width: 1100px">
           <img class="a" :src="image('exhibition', 18)" alt="Final spatial structure plan"
-            style="left: 6px; top: 7271px; width: 334px; height: 288px; object-fit: cover">
-          <p class="a c s16" style="left: -12px; top: 7498px; width: 55px">Left</p>
-          <p class="a c s16" style="left: 278px; top: 7527px; width: 55px">Right</p>
+            style="left: 6px; top: 7301px; width: 334px; height: 288px; object-fit: cover">
+          <p class="a c s16" style="left: -12px; top: 7528px; width: 55px">Left</p>
+          <p class="a c s16" style="left: 278px; top: 7557px; width: 55px">Right</p>
         </div>
       </div>
-      <div class="a s16 al" style="left: 359px; top: 7380px; width: 614px">
+      <div class="a s16 al" style="left: 359px; top: 7410px; width: 614px">
         <p class="red s18">空間結構規劃最終定案</p>
         <p>&nbsp;</p>
         <p>展場整體尺寸以長 300 × 寬300 × 高244 cm，頂部天花板漆白，並搭配白色簾幕結構作為入口界定，頂部中央懸掛的投影機在密閉的空間使用以達到良好的效果，並標示插座位置以利平板、電腦等設備充電規劃。</p>
@@ -288,8 +297,8 @@ onBeforeUnmount(() => {
         <p>觀展流程：領取平板→進入展間→用平板掃描畫→自由活動→離開展間→歸還平板</p>
       </div>
       <img class="a" :src="image('exhibition', 19)" alt="Final exhibition design render"
-        style="left: 2px; top: 7638px; width: 323px; height: 257px; object-fit: cover">
-      <div class="a s16 al" style="left: 359px; top: 7693px; width: 614px">
+        style="left: 2px; top: 7668px; width: 323px; height: 257px; object-fit: cover">
+      <div class="a s16 al" style="left: 359px; top: 7723px; width: 614px">
         <p class="red s18">展場設計最終定案</p>
         <p>&nbsp;</p>
         <p>實體空間主要以全白設計，排除雜亂干擾，目標營造純粹質感的沉浸式觀展體驗。</p>
@@ -302,27 +311,27 @@ onBeforeUnmount(() => {
     </section>
 
     <section class="blk">
-      <h2 class="a h2" style="top: 8048px">AR &amp; Motion Design</h2>
+      <h2 class="a h2" style="top: 8078px">AR &amp; Motion Design</h2>
       <img class="a" :src="image('exhibition', 20)" alt="After Effects motion design"
-        style="left: -7px; top: 8204px; width: 600px; height: 270px; object-fit: cover">
+        style="left: -7px; top: 8234px; width: 600px; height: 270px; object-fit: cover">
       <img class="no-zoom a keep" :src="image('exhibition', 21)" alt="Procreate logo"
-        style="left: 827px; top: 8330px; width: 56px; height: 55px; object-fit: cover">
+        style="left: 827px; top: 8360px; width: 56px; height: 55px; object-fit: cover">
       <img class="no-zoom a keep" :src="image('exhibition', 22)" alt="After Effects logo"
-        style="left: 903px; top: 8330px; width: 56px; height: 55px; object-fit: cover">
-      <div class="a s16 al" style="left: 626px; top: 8358px; width: 347px">
+        style="left: 903px; top: 8360px; width: 56px; height: 55px; object-fit: cover">
+      <div class="a s16 al" style="left: 626px; top: 8388px; width: 347px">
         <p class="red s18">動態效果製作</p>
         <p>&nbsp;</p>
         <p>原畫以及逐格動畫透過Procreate繪製完成後，使用After Effects進行動態製作，其中包含物件的移動、消散與融合的效果。</p>
       </div>
       <img class="a" :src="image('exhibition', 23)" alt="Born Spark AR program screenshot"
-        style="left: 9px; top: 8603px; width: 567px; height: 309px; object-fit: cover">
+        style="left: 9px; top: 8633px; width: 567px; height: 309px; object-fit: cover">
       <img class="no-zoom a keep" :src="image('exhibition', 24)" alt="Spark AR logo"
-        style="left: 769px; top: 8687px; width: 59px; height: 70px; object-fit: cover">
+        style="left: 769px; top: 8717px; width: 59px; height: 70px; object-fit: cover">
       <img class="no-zoom a keep" :src="image('exhibition', 25)" alt="Unity logo"
-        style="left: 834px; top: 8696px; width: 62px; height: 61px; object-fit: cover">
+        style="left: 834px; top: 8726px; width: 62px; height: 61px; object-fit: cover">
       <img class="no-zoom a keep" :src="image('exhibition', 26)" alt="Vuforia logo"
-        style="left: 907px; top: 8696px; width: 53px; height: 61px; object-fit: cover">
-      <div class="a s16 al" style="left: 620px; top: 8733px; width: 353px">
+        style="left: 907px; top: 8726px; width: 53px; height: 61px; object-fit: cover">
+      <div class="a s16 al" style="left: 620px; top: 8763px; width: 353px">
         <p class="red s18">AR動態效果</p>
         <p>&nbsp;</p>
         <p>使用Unity搭配Vuforia套件製作用於平板的完整版體驗，同時還有使用Spark AR製作IG 濾鏡，可應用在周邊上，也可直接用手機觀賞簡短版的動畫。</p>
@@ -332,10 +341,10 @@ onBeforeUnmount(() => {
     </section>
 
     <section class="blk">
-      <h2 class="a h2" style="top: 9083px">Immersive Multisensory Experience</h2>
+      <h2 class="a h2" style="top: 9113px">Immersive Multisensory Experience</h2>
       <img class="a" :src="image('exhibition', 28)" alt="Exhibition space with projection and banners"
-        style="left: 572px; top: 9240px; width: 401px; height: 566px; object-fit: cover">
-      <div class="a s16" style="left: 18px; top: 9243px; width: 503px">
+        style="left: 572px; top: 9270px; width: 401px; height: 566px; object-fit: cover">
+      <div class="a s16" style="left: 18px; top: 9273px; width: 503px">
         <p class="red s18">沉浸式五感體驗</p>
         <div class="spacer" style="position: relative; height: 201.6px"><img class="no-zoom" :src="image('exhibition', 27)"
             alt="Hearing, feeling, sight and touch icons"
@@ -353,63 +362,63 @@ onBeforeUnmount(() => {
     </section>
 
     <section class="blk">
-      <h2 class="a h2" style="top: 10065px">Technology Overview</h2>
-      <div class="a s16" style="left: 33px; top: 10207px; width: 436px">
+      <h2 class="a h2" style="top: 10095px">Technology Overview</h2>
+      <div class="a s16" style="left: 33px; top: 10237px; width: 436px">
         <p class="red s18">AR技術應用</p>
         <p>&nbsp;</p>
         <p>以Unity作為遊戲引擎，加上Vuforia Augmented Reality SDK進行影像辨識及擴增實境，應用於平板體驗。</p>
         <p>&nbsp;</p>
         <p>同時使用Spark AR（Meta擴增實境製作工具）製作Instagram濾鏡，發布至Facebook及Instagram平台，讓周邊商品也能透過手機直接掃描觀賞動畫。</p>
       </div>
-      <div class="a fig" style="left: 73px; top: 10489px; width: 331px; height: 130px">
-        <div style="position: absolute; left: -73px; top: -10489px; width: 1100px">
+      <div class="a fig" style="left: 73px; top: 10519px; width: 331px; height: 130px">
+        <div style="position: absolute; left: -73px; top: -10519px; width: 1100px">
           <img class="no-zoom a" :src="image('exhibition', 30)" alt="Spark AR logo"
-            style="left: 73px; top: 10489px; width: 83px; height: 98px; object-fit: cover">
+            style="left: 73px; top: 10519px; width: 83px; height: 98px; object-fit: cover">
           <img class="no-zoom a" :src="image('exhibition', 31)" alt="Unity logo"
-            style="left: 201px; top: 10495px; width: 87px; height: 86px; object-fit: cover">
+            style="left: 201px; top: 10525px; width: 87px; height: 86px; object-fit: cover">
           <img class="no-zoom a" :src="image('exhibition', 32)" alt="Vuforia logo"
-            style="left: 330px; top: 10495px; width: 74px; height: 86px; object-fit: cover">
-          <p class="a s18" style="left: 73px; top: 10594px">Spark AR</p>
-          <p class="a s18" style="left: 221px; top: 10594px">Unity</p>
-          <p class="a s18" style="left: 336px; top: 10594px">Vuforia</p>
+            style="left: 330px; top: 10525px; width: 74px; height: 86px; object-fit: cover">
+          <p class="a s18" style="left: 73px; top: 10624px">Spark AR</p>
+          <p class="a s18" style="left: 221px; top: 10624px">Unity</p>
+          <p class="a s18" style="left: 336px; top: 10624px">Vuforia</p>
         </div>
       </div>
       <img class="a" :src="image('exhibition', 29)" alt="Unity AR scene thumbnails"
-        style="left: 511px; top: 10224px; width: 461px; height: 110px; object-fit: cover">
-      <p class="a s16 al" style="left: 511px; top: 10341px">Unity AR Scene</p>
+        style="left: 511px; top: 10254px; width: 461px; height: 110px; object-fit: cover">
+      <p class="a s16 al" style="left: 511px; top: 10371px">Unity AR Scene</p>
       <img class="a" :src="image('exhibition', 33)" alt="Born Unity code"
-        style="left: 511px; top: 10406px; width: 461px; height: 292px; object-fit: cover">
-      <p class="a s16 al" style="left: 511px; top: 10709px; width: 399px">Born Unity Code : 擊蛋殼 → 蛋殼破碎 → 鳥從中飛出</p>
-      <div class="a s16 al" style="left: 22px; top: 10835px; width: 490px">
+        style="left: 511px; top: 10436px; width: 461px; height: 292px; object-fit: cover">
+      <p class="a s16 al" style="left: 511px; top: 10739px; width: 399px">Born Unity Code : 擊蛋殼 → 蛋殼破碎 → 鳥從中飛出</p>
+      <div class="a s16 al" style="left: 22px; top: 10865px; width: 490px">
         <p class="red s18">網頁設計應用</p>
         <p>&nbsp;</p>
         <p>運用Ruby on Rails框架開發，並利用Render雲平台部署網站。</p>
         <p>&nbsp;</p>
         <p>透過網頁專屬星球圖片的測試，讓觀展者聯想到自身經歷，也加深對於畫作的印象，深 入思考其中的含義，並與之產生共鳴。也可查看主題內容和各個星球的深度意涵，以 及展場和團隊介紹等。</p>
       </div>
-      <div class="a fig" style="left: 544px; top: 10878px; width: 400px; height: 100px">
-        <div style="position: absolute; left: -544px; top: -10878px; width: 1100px">
+      <div class="a fig" style="left: 544px; top: 10908px; width: 400px; height: 100px">
+        <div style="position: absolute; left: -544px; top: -10908px; width: 1100px">
           <img class="no-zoom a" :src="image('exhibition', 34)" alt="Render logo"
-            style="left: 544px; top: 10878px; width: 195px; height: 74px; object-fit: cover">
+            style="left: 544px; top: 10908px; width: 195px; height: 74px; object-fit: cover">
           <img class="no-zoom a" :src="image('exhibition', 35)" alt="Ruby on Rails logo"
-            style="left: 780px; top: 10878px; width: 164px; height: 62px; object-fit: cover">
-          <p class="a s18" style="left: 580px; top: 10952px">Render 雲平台</p>
-          <p class="a s18" style="left: 800px; top: 10952px">Ruby on Rails</p>
+            style="left: 780px; top: 10908px; width: 164px; height: 62px; object-fit: cover">
+          <p class="a s18" style="left: 580px; top: 10982px">Render 雲平台</p>
+          <p class="a s18" style="left: 800px; top: 10982px">Ruby on Rails</p>
         </div>
       </div>
-      <p class="a s16 al" style="left: 419px; top: 11098px">網頁架構圖</p>
+      <p class="a s16 al" style="left: 419px; top: 11128px">網頁架構圖</p>
       <img class="a" :src="image('exhibition', 36)" alt="Website architecture diagram"
-        style="left: 76px; top: 11130px; width: 813px; height: 340px; object-fit: cover">
-      <div class="a c s16 al" style="left: 152px; top: 11581px; width: 685px">
+        style="left: 76px; top: 11160px; width: 813px; height: 340px; object-fit: cover">
+      <div class="a c s16 al" style="left: 152px; top: 11611px; width: 685px">
         <p>網頁功能為六題性格測驗，回答結束後生成專屬星球圖片，使用者可保存圖片、查看元素含義，並能觀看每顆星球的居民人數統計，讓使用者感受到與自己產生共鳴的同類並不孤單。</p>
         <p>&nbsp;</p>
         <p>網頁另涵蓋主題概念詳細介紹、團隊介紹、展場製作過程分享。</p>
       </div>
       <img class="a" :src="image('exhibition', 37)" alt="Website screens"
-        style="left: 170px; top: 11700px; width: 648px; height: 381px; object-fit: cover">
-      <p class="a c s18 red" style="left: 198px; top: 12236px; width: 569px">How might we give observers something that
+        style="left: 170px; top: 11730px; width: 648px; height: 381px; object-fit: cover">
+      <p class="a c s18 red" style="left: 198px; top: 12266px; width: 569px">How might we give observers something that
         is truly their own to<br>take away, without forcing them to promote the exhibition?</p>
-      <div class="a s16" style="left: -7px; top: 12417px; width: 412px">
+      <div class="a s16" style="left: -7px; top: 12447px; width: 412px">
         <p class="red s18">專屬星球圖片：個人化的觀展紀念</p>
         <p>&nbsp;</p>
         <p>Function:</p>
@@ -422,7 +431,7 @@ onBeforeUnmount(() => {
         <p>不希望以強迫打卡的方式要求觀眾宣傳展覽，因此設計讓每一張星球圖片都兼具美感與個人代表性。希望讓觀展者自然願意主動分享至社群媒體。行銷擴散因此成為體驗設計的自然結果，而非額外施加的任務。</p>
       </div>
       <img class="a" :src="image('exhibition', 38)" alt="Personalised planet picture screens"
-        style="left: 428px; top: 12508px; width: 545px; height: 332px; object-fit: cover">
+        style="left: 428px; top: 12538px; width: 545px; height: 332px; object-fit: cover">
     </section>
   </div>
 </template>
