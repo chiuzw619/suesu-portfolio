@@ -376,9 +376,9 @@ import { image } from '../site'
           </ul>
         </div>
       </div>
-      <p class="a card s20 w"
-        style="left: 17px; top: 14732px; width: 928px; height: 78px; padding: 23px 20px 0 73px; box-sizing: border-box; border: 1px solid #1d2cf3; border-radius: 5px; background: #5975a3">
-        Key Strategic: One collaboration can speak to different generations in different ways.</p>
+      <p class="a card s18 w"
+        style="left: 17px; top: 14732px; width: 928px; height: 78px; display: flex; align-items: center; padding: 0 20px 0 73px; box-sizing: border-box; border: 1px solid #1d2cf3; border-radius: 5px; background: #5975a3">
+        <span>Key Strategic: One collaboration can speak to different generations in different ways.</span></p>
       <h3 class="a h30" style="left: -7px; top: 14938px; width: 703px">02&nbsp; Cultural IP Is More Than a Visual Asset
       </h3>
       <p class="a s20" style="left: -7px; top: 14992px; width: 768px">Make the collaboration authentic</p>
@@ -397,7 +397,7 @@ import { image } from '../site'
         <p><b>Create a meaningful connection</b><br>Bring the two worlds together through design, storytelling and
           craftsmanship.</p>
       </div>
-      <p class="a card s20 w"
+      <p class="a card s18 w"
         style="left: 98px; top: 15559px; width: 768px; height: 138px; display: flex; align-items: center; padding: 0 20px 0 93px; box-sizing: border-box; border: 1px solid #1d2cf3; border-radius: 5px; background: #5975a3">
         <span>Strategic implication:<br>The goal is not to make the IP look luxurious.<br>It is to create a meaningful
           dialogue between the brand and the IP.</span></p>
@@ -415,7 +415,7 @@ import { image } from '../site'
         <p>&nbsp;</p>
         <p><b>Identity</b><br>The design can become a way for consumers to express something about themselves.</p>
       </div>
-      <p class="a card s20 w"
+      <p class="a card s18 w"
         style="left: 99px; top: 16506px; width: 768px; height: 110px; display: flex; align-items: center; padding: 0 20px 0 19px; box-sizing: border-box; border: 1px solid #1d2cf3; border-radius: 5px; background: #5975a3">
         <span>Strategic implication:<br>The strongest collaborations give consumers something personal to connect
           with.</span></p>
