@@ -1,67 +1,82 @@
 # Sue Su Portfolio
 
-Wei-Chu Su（Sue）的個人作品集，收錄研究專案、AR 互動展覽、插畫與平面設計作品。
+Wei-Chu Su（Sue）的個人作品集，收錄品牌研究、AR 互動展覽、插畫與平面設計。
 
 線上網站：https://chiuzw619.github.io/suesu-portfolio/
 
-作品集原本架在 [Wix](https://halcyonforsue.wixsite.com/suesu) 上，現在改寫成不依賴 Wix 的前端網站，並另外在 Figma 重建一份可編輯的設計稿。在保留原本版面的前提下，新增了瀏覽與互動體驗。
+作品集原本架在 [Wix](https://halcyonforsue.wixsite.com/suesu) 上。這個版本保留原本的版面與留白節奏，改寫成獨立的前端網站，並在 Figma 重建一份可編輯的設計稿。重做的重點不是換一個殼，而是讓網站本身也成為作品的一部分：瀏覽的過程，要能感受到作品想傳達的氛圍。
+
+## 設計亮點
+
+### 線條，是整個網站的語言
+
+Sue 的插畫以細膩的線條見長，所以網站的互動也從「線」出發：
+- 游標是一個小圓點加一圈細線。移到作品上時，會變成寫著「VIEW」的深色圓點，提示這裡可以看得更仔細。
+- Topbar 目前所在的頁面、獎項連結，滑過時都會畫出一條細底線。
+- 下雨的效果，是由一道道白色細線落下組成。
+
+### Home：讓插畫延伸到整個畫面
+
+滑鼠移到首頁的花卉插畫上，畫面會轉成深夜色，白色細線像雨一樣落下。插畫的線條感從畫框裡延伸出來，第一眼就讓訪客感受到作者的筆觸風格。
+
+### Exhibition：把展場搬進網頁
+
+《The Echo of Lodestar》是一個沉浸式的 AR 展覽，所以這一頁也試著讓人「走進展場」：
+- **捲進展區，燈就暗了：** 捲到 Core Concept 時，頁面漸漸暗下、開始下雨，像走進昏暗的展間。離開互動流程的段落後，再慢慢回到白天。
+- **作品自己會動：** 五個星球的 AR 動畫直接在頁面上無限循環，就像展場牆面上一直播放的作品，不需要點擊。
+- **看影片時，世界也暗下來：** 展覽影片直接在作品集裡播放，播放時畫面轉為夜色，暫停後恢復，像在戲院裡看片。
+- **流程是被畫出來的：** Our Story 的流程線會由左往右畫出，節點依序亮起，最後有一顆紅點沿著線不停前進，把「這是一段歷程」用動態說出來。
+- **獎項像展覽說明牌：** 三個獎項以細線分隔、置中排列，點擊後在新分頁打開，不打斷瀏覽。
+
+### Illustration：在星空裡看星球
+
+展覽的靈感來自拉丁格言「Per aspera ad astra（循此苦旅，以達天際）」，所以插畫頁一打開就是一片會閃爍的星空：
+- 星星有遠近之分，捲動時會以不同速度移動，偶爾還有流星劃過。
+- 客製化星球的元素線稿（蝴蝶、蛾、花、烏鴉）在星空中化為白色線條，像一幅幅星座圖。
+- 到「Different styles of illustrations」時，星空慢慢退去，回到白天，轉換到明信片、卡片與書籍插畫的日常語境。
+- 明信片與卡片加上了柔和的陰影，像實際印出來、放在桌上的卡片。
+
+### 看見作品的細節
+
+點擊作品，可以放大到整個畫面，看清楚筆觸、紙張質感與圖表數字。只有 Sue 提供原始檔的作品可以放大，確保放大後依然清晰。Logo、參考小圖這類輔助圖片則維持原狀，讓注意力留在作品上。
+
+### 長篇內容也好讀
+
+Project 是一篇完整的研究論文，Exhibition 是一份完整的展覽企劃，內容都很長：
+- 左下角有一列區塊索引，隨時知道自己讀到哪一段，點一下就能跳過去。
+- 右下角的 Top 按鈕，捲動後才出現，隨時可以回到頂部。
+- 手機版的每個區塊以分隔線與紅色編號（01、02…）開頭，在小螢幕上也能一眼分出段落。
+
+所有動態效果，在系統開啟「減少動態效果」時都會改為靜態呈現。
 
 ## 從 Wix 到前端與 Figma
 
 ### 前端網站
 
-- 使用 **Vue 3 + Vite**。每個 topbar 頁面是獨立的 HTML 入口，不需要路由，可以直接放在 GitHub Pages。
-- **桌面版（1000px 以上）**：重現原 Wix 版面。內容放在 980px 的欄位中，每個元素依照從原站量到的座標絕對定位，座標都寫在 `src/pages/*.vue` 裡。
-- **手機版（1000px 以下）**：改成單欄 RWD 排版。色塊卡片會隨文字延伸，圖表和拼貼區塊整體等比縮放。
-- 圖片、字型（Cinzel、Almarai、Inter，透過 `@fontsource`）和程式都打包在專案內，正式網站沒有任何 Wix 標籤或 Wix 執行程式。
+- 使用 **Vue 3 + Vite**，每個 topbar 頁面是獨立的 HTML 入口，直接放在 GitHub Pages。
+- **桌面版（1000px 以上）** 重現原 Wix 版面：內容放在 980px 的欄位中，每個元素依照從原站量到的座標定位，座標寫在 `src/pages/*.vue` 裡。
+- **手機版（1000px 以下）** 改成單欄排版，色塊卡片隨文字延伸，圖表與拼貼等比縮放。
+- 圖片、字型與程式都打包在專案內，正式網站不依賴 Wix。
 
 ### Figma 設計稿
 
-Figma 檔裡有 6 個 1280px 寬的桌面版 frame（Home、Project、Exhibition、Illustration、Graphic Design、Contact），每個圖層都可以編輯。轉換流程：
-
-1. 用無頭 Chrome（Chrome DevTools Protocol）載入線上網站，讀出每個圖片、文字區塊、色塊、線條和圖示的實際位置、尺寸與文字樣式（字型、字級、行高、顏色、粗體、斜體、底線）。
-2. 把這些資料轉成 Figma Plugin API 腳本，透過 Figma MCP 在 Figma 中逐頁建立圖層。文字保留段落內的混合樣式。
-3. 把網站的 AVIF 圖片轉成 PNG 上傳，填入對應的圖層。
-
-Figma 中沒有的字型以接近的字型替代：Times New Roman → Tinos、Helvetica Neue → Arimo、中文 → Noto Sans TC / Noto Serif TC。
-
-## 新增的 UX 與 UI 互動
-
-| 互動 | 位置 | 說明 |
-| --- | --- | --- |
-| 區塊索引列 | 除 Home 外每頁左下角 | 依各區塊標題自動產生，點擊後平滑捲動到該區塊，並標示目前閱讀到的區塊。寬度不足時收合成「Index」按鈕。 |
-| 固定的 Top 按鈕 | 除 Home 外每頁右下角 | 往下捲 400px 後出現，點擊平滑回到頂部。 |
-| 目前頁面底線 | Topbar | 目前所在頁面的選項下方有細線，滑鼠移到其他選項時細線會由左往右畫出。 |
-| 夜色下雨效果 | Home 插圖 | 滑鼠移到插圖上（手機點擊），背景漸變為 #252320，白色細線像雨一樣落下，呼應插圖的線條感。 |
-| 沉浸式捲動 | Exhibition 的 Core Concept 到 Interaction Process | 捲動進入時漸漸變暗、開始下雨，接近 Usability Testing 時漸漸恢復。 |
-| 頁內影片播放 | Exhibition 的 Our Story | 點擊縮圖直接在頁面上播放 YouTube 影片，不會離開作品集；播放時切換到夜色下雨效果，暫停或播完即恢復。 |
-| 流程線動畫 | Exhibition 的 Our Story | 捲動到流程線時，線條由左往右畫出，節點與文字依序出現，之後有紅點沿線移動，表示依序進行的流程。 |
-| 圖片放大檢視 | 所有頁面的重要圖片 | 情境圖、圖表、流程圖與作品圖可點擊放大，可用箭頭或鍵盤 ← → 切換，點空白處、× 或 Esc 關閉。Logo、參考小圖與大頭照不放大（加上 `no-zoom` class）。 |
-| 自訂游標 | 全站（滑鼠與觸控板） | 細線風格的圓點與跟隨圓圈，移到連結時放大，移到可放大的圖片上顯示「VIEW」。 |
-| 手機版區塊分隔 | 1000px 以下 | 每個區塊以分隔線和紅色編號（01、02…）開頭，標題放在內容最前面。 |
-| 頁尾留白 | 除 Home 外每頁 | 頁面高度依實際內容計算，底部固定留 160px，不再有大片空白。 |
-
-有動態效果的互動，都會在系統開啟「減少動態效果」時改為靜態呈現。
+Figma 檔中有 6 個 1280px 寬的桌面版頁面，每個圖層都可以編輯。做法是用無頭 Chrome 讀出線上網站每個元素的位置、尺寸與文字樣式，轉成 Figma Plugin API 腳本，再透過 Figma MCP 逐頁建立圖層並填入圖片。Figma 中沒有的字型以接近的字型替代（Times New Roman → Tinos、Helvetica Neue → Arimo、中文 → Noto Sans TC）。
 
 ## 專案結構
 
-- `src/pages/*.vue`：各頁內容與桌面版座標。每個區塊包在 `<section class="blk">` 中，索引列與手機版分隔都依此判斷。
-- `src/components/`：Topbar、區塊索引列、圖片放大、自訂游標。
-- `src/rain.js`：Home 與 Exhibition 共用的夜色下雨效果。
-- `src/style.css`：全站樣式，包含 RWD 規則。
+- `src/pages/*.vue`：各頁內容與桌面版座標，每個區塊包在 `<section class="blk">` 中。
+- `src/components/`：Topbar、區塊索引、圖片放大、自訂游標。
+- `src/rain.js`、`src/stars.js`：下雨與星空效果。
+- `src/site.js`：頁面設定，以及哪些圖片已換成原始檔。
+- `src/style.css`：全站樣式與 RWD 規則。
 
-## 圖片
+## 圖片與影片
 
-| Topbar | 網址 | 圖片檔案 |
-| --- | --- | --- |
-| Home | `/` | `home-1.avif`（頁面使用去背版 `home-1-cutout.webp`） |
-| Project | `/project/` | `project-1.avif` ～ `project-7.avif` |
-| Exhibition | `/exhibition/` | `exhibition-1.avif` ～ `exhibition-38.avif` |
-| Illustration | `/illustration/` | `illustration-1.avif` ～ `illustration-34.avif` |
-| Graphic Design | `/graphic-design/` | `graphic-design-1.avif` ～ `graphic-design-13.avif` |
-| Contact | `/contact/` | `contact-1.avif` |
-
-圖片依 topbar 類別放在 `public/images/<類別>/`，並依原頁面的出現順序命名。從 Wix 下載的原始檔放在 `public/images/source/`。要更換圖片時，用同樣的檔名取代對應檔案即可。目前的圖片解析度與頁面顯示尺寸相同，換成更高解析度的版本，放大檢視時會更清楚。
+- 網站圖片放在 `public/images/<頁面>/`，依原頁面的出現順序命名（例如 `illustration-5`）。
+- Sue 提供的原始檔放在 `originals/`。這個資料夾不會上傳到 GitHub，也不會部署，只保留在本機。網站使用的是從原始檔縮到最長邊 2400px 以內的 WebP。
+- 還找不到原始檔的圖片，暫時沿用從 Wix 下載的 `.avif`，這些圖片不開放放大。之後找到原始檔，放進 `originals/`、轉成同編號的 `.webp`，再把編號加進 `src/site.js` 的清單，就會自動換上並可以放大。
+- 白底的線稿與插畫另有去背版本（`*-cutout.webp`），讓它們能放在星空或夜色背景上。
+- Core Concept 的 AR 動畫放在 `public/videos/`。
 
 ## 本機執行
 
@@ -83,5 +98,3 @@ npm run deploy
 ```
 
 會重新建置並把 `dist/` 推送到 `gh-pages`，約一分鐘後網站更新。原始碼請另外 commit 並 push 到 `main`。
-
-Vite 使用相對路徑 `base: './'`，支援 `https://使用者名稱.github.io/倉庫名稱/` 這種子路徑。
