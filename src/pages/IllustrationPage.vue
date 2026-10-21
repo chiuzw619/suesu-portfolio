@@ -4,16 +4,18 @@ import { image } from '../site'
 
 <template>
   <div class="page wix-illustration">
-<img class="a" :src="image('illustration', 1)" alt="Orchid of Dream, colour illustration" style="left: 14px; top: 241px; width: 420px; height: 429px; object-fit: cover">
-<img class="a" :src="image('illustration', 2)" alt="Orchid of Dream, line drawing" style="left: 528px; top: 423px; width: 445px; height: 445px; object-fit: cover">
+<section class="blk">
 <h1 class="a ti" style="left: 64px; top: 670px">Orchid of Dream</h1>
 <p class="a tx" style="left: 64px; top: 716px; width: 396px">Through delicate line drawing and multi-colour fusion. Depicting the flower in full bloom beyond its original frame.</p>
+<img class="a" :src="image('illustration', 1)" alt="Orchid of Dream, colour illustration" style="left: 14px; top: 241px; width: 420px; height: 429px; object-fit: cover">
+<img class="a" :src="image('illustration', 2)" alt="Orchid of Dream, line drawing" style="left: 528px; top: 423px; width: 445px; height: 445px; object-fit: cover">
+</section>
 
+<section class="blk">
 <h2 class="a ti c" style="left: 260px; top: 999px; width: 445px">The Echo of Lodestar: Desire</h2>
 <div class="a c" style="left: 122px; top: 1094px; width: 722px; font-size: 16px; line-height: 22.4px">
 <p style="margin: 0">"The Echo of Lodestar" is an exhibition that focuses on visual art with augmented reality (AR)<br>&nbsp;<br>interaction. The concept is inspired by the Latin motto "Per aspera ad astra" and the book"Demian: The Story of Emil Sinclair's Youth", from which five planet themes are derived: Born,Desire, Sink, Lonesome, and Reflection. Each theme represents a certain emotion or life stage.<br>&nbsp;<br>Aiming to explore the consciousness, mentality, and struggle of self-discovery in different phases of life. The exhibition features delicate illustrations and AR interaction with animations. By scanning the planet paintings on the banner, visitors can interact with the paintings to understand the meanings of each theme and resonate with their own life experiences.<br>&nbsp;<br>All visual art and stylistic conceptual direction of the paintings in the exhibition by WeiChu Su.<br>The project was awarded the 2023 ISARCH Digital Award Winner.</p>
 </div>
-
 <img class="a" :src="image('illustration', 3)" alt="Lonesome planet painting" style="left: -7px; top: 1485px; width: 279px; height: 281px; object-fit: cover">
 <h3 class="a pl" style="left: -6px; top: 1794px">Lonesome</h3>
 <p class="a sm" style="left: -6px; top: 1838px; width: 279px">God makes people lonely through various ways, so that we can walk towards ourselves.<br><br>Living is a process of feeling loneliness.<br>Only after feeling loneliness can we return to ourselves.</p>
@@ -32,7 +34,9 @@ import { image } from '../site'
 <img class="a" :src="image('illustration', 8)" alt="Sink planet painting" style="left: 693px; top: 2007px; width: 279px; height: 281px; object-fit: cover">
 <h3 class="a pl" style="left: 694px; top: 2322px">Sink</h3>
 <p class="a sm" style="left: 694px; top: 2377px; width: 279px">The awakened man has only one duty to find himself and stick to himself. Go along your own path, no matter where it leads.<br><br>Before one can find one's way, one must first face the inner chaos and uncertainty.</p>
+</section>
 
+<section class="blk">
 <h2 class="a ti c" style="left: 253px; top: 2665px; width: 459px; line-height: 32.5px">Customized Planet picture<br>Visual Design and Illustration</h2>
 <p class="a tx c" style="left: 104px; top: 2771px; width: 759px">At the end of the exhibition,<br>visitors take a quiz and are given their own personalised picture of the planet.<br>During the quiz,five graphic elements and a motto are generated to form a complete picture of the planet.</p>
 <div class="a fig" style="left: -7px; top: 2891px; width: 894px; height: 642px"><div style="position: absolute; left: 7px; top: -2891px; width: 1100px">
@@ -44,14 +48,18 @@ import { image } from '../site'
 <img class="a" :src="image('illustration', 11)" alt="Customized planet element" style="left: 28px; top: 3287px; width: 246px; height: 246px; object-fit: cover">
 <img class="a" :src="image('illustration', 13)" alt="Customized planet element" style="left: 287px; top: 3293px; width: 175px; height: 210px; object-fit: cover">
 </div></div>
+</section>
 
+<section class="blk">
 <h2 class="a ti c" style="left: 357px; top: 3726px; width: 252px">Movie posters</h2>
 <p class="a" style="left: 219px; top: 3790px; width: 528px; font-size: 16px; line-height: 16px">Movie Posters for National Taiwan University of Arts film production " Pink Me"</p>
 <img class="a" :src="image('illustration', 16)" alt="Pink Me movie poster, night version" style="left: 142px; top: 3915px; width: 301px; height: 376px; object-fit: cover">
 <p class="a cap" style="left: 239px; top: 4316px; width: 107px">Night version</p>
 <img class="a" :src="image('illustration', 17)" alt="Pink Me movie poster, day version" style="left: 523px; top: 3915px; width: 301px; height: 376px; object-fit: cover">
 <p class="a cap" style="left: 628px; top: 4316px; width: 91px">Day version</p>
+</section>
 
+<section class="blk">
 <h2 class="a ti" style="left: 42px; top: 4551px; width: 491px">Different styles of illustrations</h2>
 <p class="a tx" style="left: 42px; top: 4613px; width: 593px">Different styles of illustrations are displayed, from delicate lines of architectural<br>sketches to healing and cute illustrations.</p>
 <img class="a" :src="image('illustration', 18)" alt="June postcard" style="left: -7px; top: 4736px; width: 242px; height: 239px; object-fit: cover; background: #000000">
@@ -66,7 +74,9 @@ import { image } from '../site'
 <p class="a tx c" style="left: 128px; top: 6055px; width: 253px">2023 Graduating for<br>Yuan Ze University postcard</p>
 <img class="a" :src="image('illustration', 23)" alt="The Garden of Dreams card" style="left: 537px; top: 5620px; width: 343px; height: 343px; object-fit: cover; background: #000000">
 <p class="a cap" style="left: 582px; top: 5998px; width: 253px">The Garden of Dreams card</p>
+</section>
 
+<section class="blk">
 <h2 class="a ti" style="left: 39px; top: 6334px; width: 543px">illustrations of the book 'Lu Ming"</h2>
 <p class="a tx" style="left: 39px; top: 6408px; width: 690px">We have produced the book "Lu Ming", hoping to introduce the tea culture of Lugu Township through this book. In order to fit in with the tone of the book, I tried many different brushstrokes to depict the illustrations in the book, and finally used airy brushstrokes and ink strokes to create a warm style that is both Japanese and Chinese at the same time.<br><br>The project won the London International Creative Competition 2022 Finalists in Illustrate (graphic) and International Design Awards 2022 Graphic Design Honorable Mention.</p>
 <img class="a" :src="image('illustration', 24)" alt="Lu Ming tea brewing illustration, step 1" style="left: -54px; top: 6624px; width: 395px; height: 558px; object-fit: cover">
@@ -81,10 +91,13 @@ import { image } from '../site'
 <img class="a" :src="image('illustration', 31)" alt="Tea service illustration" style="left: 477px; top: 7817px; width: 283px; height: 400px; object-fit: cover">
 <img class="a" :src="image('illustration', 32)" alt="Tea service illustration" style="left: 696px; top: 7817px; width: 283px; height: 400px; object-fit: cover">
 <p class="a tx" style="left: 538px; top: 8246px; width: 435px">Illustrations for different kinds of Tea Service in the book Lu Ming</p>
+</section>
 
+<section class="blk">
 <h2 class="a ti c" style="left: 175px; top: 8506px; width: 616px">Fine arts background illustration</h2>
 <img class="a" :src="image('illustration', 33)" alt="Accompany background illustration, wide" style="left: 80px; top: 8647px; width: 783px; height: 295px; object-fit: cover">
 <img class="a" :src="image('illustration', 34)" alt="Accompany background illustration" style="left: 336px; top: 9028px; width: 600px; height: 445px; object-fit: cover">
 <p class="a tx" style="left: 51px; top: 9544px; width: 633px">Fine arts background illustration for Animation film Accompany.<br>The story is set in a 2D animated setting depicting a crumbling post-apocalyptic world.</p>
+</section>
   </div>
 </template>

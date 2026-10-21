@@ -13,13 +13,13 @@ const offset = page === 'contact' ? 10 : 0
   <header v-if="page === 'home'">
     <h1 class="a site-name-home"><a :href="siteRoot">Wei Chu Su</a></h1>
     <nav class="a site-nav" aria-label="Main navigation" style="left: 80px; top: 140px">
-      <a v-for="(item, i) in nav" :key="item.id" :href="item.href" :style="{ width: `${widths[i]}px` }" :aria-current="page === item.id ? 'page' : undefined">{{ item.label }}</a>
+      <a v-for="(item, i) in nav" :key="item.id" :href="item.href" :style="{ width: `${widths[i]}px` }" :aria-current="page === item.id ? 'page' : undefined"><span>{{ item.label }}</span></a>
     </nav>
   </header>
   <header v-else>
     <p class="a site-name" :style="{ top: `${107 + offset}px` }"><a :href="siteRoot">Wei Chu Su</a></p>
     <nav class="a site-nav" aria-label="Main navigation" :style="{ left: '244px', top: `${101 + offset}px` }">
-      <a v-for="(item, i) in nav" :key="item.id" :href="item.href" :style="{ width: `${widths[i]}px` }" :aria-current="page === item.id ? 'page' : undefined">{{ item.label }}</a>
+      <a v-for="(item, i) in nav" :key="item.id" :href="item.href" :style="{ width: `${widths[i]}px` }" :aria-current="page === item.id ? 'page' : undefined"><span>{{ item.label }}</span></a>
     </nav>
   </header>
 </template>

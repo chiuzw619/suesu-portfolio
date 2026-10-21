@@ -14,15 +14,14 @@ export const nav = [
 ]
 
 // Pages reproduce the Wix desktop layout: a fixed 980px column of absolutely
-// positioned elements. height is the full page height; top is where the
-// bordered "Top" button sits (measured from the original site).
+// positioned elements. height is the full page height (measured from the original site).
 export const layout = {
   home: { height: 814 },
-  project: { height: 17668, top: 17502 },
-  exhibition: { height: 13101, top: 12935 },
-  illustration: { height: 10147, top: 9742 },
-  'graphic-design': { height: 5571, top: 5166 },
-  contact: { height: 2864, top: 2459 },
+  project: { height: 17668 },
+  exhibition: { height: 13101 },
+  illustration: { height: 10147 },
+  'graphic-design': { height: 5571 },
+  contact: { height: 2864 },
 }
 
 export const image = (section, number) => `${siteRoot}images/${section}/${section}-${number}.avif`

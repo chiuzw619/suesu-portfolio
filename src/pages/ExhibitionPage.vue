@@ -4,6 +4,7 @@ import { image } from '../site'
 
 <template>
   <div class="page wix-exhibition">
+<section class="blk">
 <div class="a c" style="left: -7px; top: 290px; width: 980px">
 <h1 style="margin: 0; font-size: 45px; line-height: 72px; font-weight: 400">The Echo of Lodestar</h1>
 <p class="al" style="font-size: 25px; line-height: 40px">AR互動視覺展覽專案</p>
@@ -16,7 +17,9 @@ import { image } from '../site'
 <p><a href="https://www.moe-idc.org/Works/Content/2033">台灣IDC設計戰國策 113年度教育部國際競賽計畫 二等獎</a>及Yahoo新聞等多家媒體報導</p>
 </div>
 <img class="a" :src="image('exhibition', 1)" alt="The Echo of Lodestar exhibition key visual" style="left: -7px; top: 671px; width: 980px; height: 383px; object-fit: cover">
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="top: 1176px">Research Background</h2>
 <img class="a" :src="image('exhibition', 2)" alt="Demian book cover" style="left: 43px; top: 1296px; width: 120px; height: 192px; object-fit: cover">
 <div class="a s16" style="left: 220px; top: 1334px; width: 753px">
@@ -35,7 +38,9 @@ import { image } from '../site'
 <p>在體驗形式的研究上，團隊以The Art of Bloom為參考，希望打造出多重感官沉浸式展覽作為指標案例。該案例聚焦人與自然的共生關係，透過裝置藝術結合AR技術，形成開放式的體驗結構。在這樣的形式下訪客能夠以在既定框架內，自行發展出個人化的互動路徑與詮釋方式。此開放詮釋、鼓勵自發性互動的設計原則，是The Echo of Lodestar在展場動線規劃、AR互動觸發機制設計上的重要參考依據，也影響後續在觀展者主動探索、產出個人化星球圖鑑方面的核心體驗邏輯。</p>
 </div>
 <img class="a" :src="image('exhibition', 4)" alt="The Art of Bloom exhibition reference" style="left: 793px; top: 2003px; width: 235px; height: 159px; object-fit: cover">
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="top: 2291px; left: -9px">Our Story</h2>
 <div class="a s16" style="left: 65px; top: 2418px; width: 832px">
 <p class="c red s18">How might we help people recognize and resonate with their own psychological journey of growth, through an immersive AR exhibition experience?</p>
@@ -66,7 +71,9 @@ import { image } from '../site'
 <span style="position: absolute; left: 20px; top: 16px; color: #ffffff; font-size: 18px">The Echo of Lodestar</span>
 <svg style="position: relative" width="68" height="48" viewBox="0 0 68 48" role="img" aria-label="Play video on YouTube"><rect width="68" height="48" rx="12" fill="#ff0000"></rect><path d="M27 15v18l16-9z" fill="#ffffff"></path></svg>
 </a>
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="top: 3465px">Core<br>Concept</h2>
 <img class="a" :src="image('exhibition', 5)" alt="Born AR animation" style="left: 105px; top: 3632px; width: 197px; height: 198px; object-fit: cover">
 <p class="a c s16" style="left: 88px; top: 3846px; width: 232px">突破 Born<br><br>互動效果：點擊蛋殼<br>飛鳥破殼而出</p>
@@ -78,7 +85,9 @@ import { image } from '../site'
 <p class="a c s16" style="left: 618px; top: 4611px; width: 274px">孤獨 Lonesome<br><br>互動效果：點擊雲霧<br>黑暗逐漸吞噬一切</p>
 <img class="a" :src="image('exhibition', 9)" alt="Sink AR animation" style="left: 94px; top: 4546px; width: 197px; height: 198px; object-fit: cover">
 <p class="a c s16" style="left: 62px; top: 4760px; width: 263px">沉淪 Sink<br><br>互動效果：點擊黑洞深淵<br>黑暗逐漸吞噬一切</p>
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="top: 4998px; left: -6px">Interaction Process</h2>
 <p class="a c s16 al" style="left: -9px; top: 5146px; width: 163px">領取平板<br>進入展場</p>
 <img class="a" :src="image('exhibition', 10)" alt="Visitor collects a tablet" style="left: -6px; top: 5245px; width: 156px; height: 162px; object-fit: cover">
@@ -94,7 +103,9 @@ import { image } from '../site'
 <svg class="a desk" style="left: 364px; top: 5160px" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#242323" stroke-width="1.2" aria-hidden="true"><path d="M1 9h15M11 4l5 5-5 5"></path></svg>
 <svg class="a desk" style="left: 575px; top: 5160px" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#242323" stroke-width="1.2" aria-hidden="true"><path d="M1 9h15M11 4l5 5-5 5"></path></svg>
 <svg class="a desk" style="left: 785px; top: 5160px" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#242323" stroke-width="1.2" aria-hidden="true"><path d="M1 9h15M11 4l5 5-5 5"></path></svg>
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="top: 5546px; left: -10px">Usability Testing of the Process</h2>
 <div class="a fig" style="left: -7px; top: 5690px; width: 980px; height: 388px"><div style="position: absolute; left: 7px; top: -5690px; width: 1100px">
 <p class="a c s18 al" style="left: 23px; top: 5690px; width: 163px">測試必要性</p>
@@ -109,7 +120,9 @@ import { image } from '../site'
 <p>&nbsp;</p>
 <p>測試方法採觀察法＋即時口述法，請受測者在體驗過程中同步說出當下的操作想法與疑惑，並於體驗結束後進行簡短訪談，回顧整體感受與操作困難點，同時也記錄網頁測評完成率，作為體驗流暢度的重要量化參考依據。</p>
 </div>
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="top: 6585px">Exhibition Design</h2>
 <img class="a" :src="image('exhibition', 17)" alt="Early exhibition space design" style="left: -7px; top: 6806px; width: 323px; height: 254px; object-fit: cover">
 <div class="a s16 al" style="left: 359px; top: 6766px; width: 614px">
@@ -148,7 +161,9 @@ import { image } from '../site'
 <p>&nbsp;</p>
 <p>三面牆面結合畫作、美術手稿、星球小圖與文字（新詩、說明），頂部中央設置一台投影機，於密閉展間內投映光影變化與水波倒映效果，讓光影穿透並映照在透明布條與畫作之上，使整體展場氛圍隨光影流動而產生層次變化，把視覺與文本融入展場。</p>
 </div>
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="top: 7913px">AR &amp; Motion Design</h2>
 <img class="a" :src="image('exhibition', 20)" alt="After Effects motion design" style="left: -7px; top: 8069px; width: 600px; height: 270px; object-fit: cover">
 <img class="a keep" :src="image('exhibition', 21)" alt="Procreate logo" style="left: 827px; top: 8195px; width: 56px; height: 55px; object-fit: cover">
@@ -169,7 +184,9 @@ import { image } from '../site'
 <p>&nbsp;</p>
 <p>（Born Spark AR程式截圖）</p>
 </div>
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="top: 8948px">Immersive Multisensory Experience</h2>
 <img class="a" :src="image('exhibition', 28)" alt="Exhibition space with projection and banners" style="left: 572px; top: 9105px; width: 401px; height: 566px; object-fit: cover">
 <div class="a s16" style="left: 18px; top: 9108px; width: 503px">
@@ -185,7 +202,9 @@ import { image } from '../site'
 <p>&nbsp;</p>
 <p>Feeling：觀展後透過網頁進行心理測驗，觀展者的選擇生成客製化星球圖鑑，並可查看與自己產生共鳴的同星球居民人數，讓情感共鳴從個人體驗延伸為群體連結的心理感受。</p>
 </div>
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="top: 9930px">Technology Overview</h2>
 <div class="a s16" style="left: 33px; top: 10072px; width: 436px">
 <p class="red s18">AR技術應用</p>
@@ -241,5 +260,6 @@ import { image } from '../site'
 <p>不希望以強迫打卡的方式要求觀眾宣傳展覽，因此設計讓每一張星球圖片都兼具美感與個人代表性。希望讓觀展者自然願意主動分享至社群媒體。行銷擴散因此成為體驗設計的自然結果，而非額外施加的任務。</p>
 </div>
 <img class="a" :src="image('exhibition', 38)" alt="Personalised planet picture screens" style="left: 428px; top: 12373px; width: 545px; height: 332px; object-fit: cover">
+</section>
   </div>
 </template>

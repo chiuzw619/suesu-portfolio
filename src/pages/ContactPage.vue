@@ -4,6 +4,7 @@ import { image } from '../site'
 
 <template>
   <div class="page wix-contact">
+<section class="blk" data-label="Profile">
 <img class="a" :src="image('contact', 1)" alt="Portrait of Wei-Chu Su" style="left: 60px; top: 304px; width: 279px; height: 386px; object-fit: cover">
 <h1 class="a" style="left: 406px; top: 352px; font-family: Cinzel, serif; font-size: 25px; line-height: 25px; letter-spacing: 1.25px; font-weight: 400">Wei-Chu Su (Sue)</h1>
 <div class="a" style="left: 406px; top: 450px; width: 435px; font-size: 16px; line-height: 16px">
@@ -16,7 +17,9 @@ import { image } from '../site'
 <p>&nbsp;</p>
 <p>Goldsmiths, University of London, MA in Luxury Brand Management<br>London, United Kingdom<br>&nbsp;<br>Yuan Ze University, BA in Information Communication<br>Taoyuan City, Taiwan</p>
 </div>
+</section>
 
+<section class="blk">
 <div class="a cv" style="left: 60px; top: 740px; width: 846px">
 <h2 class="hd" style="line-height: 21px">COMPETITION EXPERIENCE</h2>
 <p>&nbsp;</p>
@@ -26,7 +29,9 @@ import { image } from '../site'
 <li>Responsible for the cover design and illustration of the book design, including the overall visual styling.</li>
 </ul>
 </div>
+</section>
 
+<section class="blk">
 <div class="a cv" style="left: 60px; top: 1094px; width: 846px">
 <h2 class="hd">WORK EXPERIENCE</h2>
 <p>&nbsp;</p>
@@ -62,7 +67,9 @@ import { image } from '../site'
 <li>Worked with creative teams to maintain visual consistency and production quality, resolving on-site challenges by balancing aesthetic requirements with practical constraints.</li>
 </ul>
 </div>
+</section>
 
+<section class="blk">
 <div class="a cv" style="left: 60px; top: 2044px; width: 846px">
 <h2 class="hd">PROJECTS EXPERIENCE</h2>
 <p>&nbsp;</p>
@@ -74,7 +81,9 @@ import { image } from '../site'
 <li>Coordinated team tasks, timelines and deliverables, facilitating communication across members and monitoring quality through to final delivery.</li>
 </ul>
 </div>
+</section>
 
+<section class="blk">
 <div class="a cv" style="left: 60px; top: 2324px; width: 846px">
 <h2 class="hd" style="line-height: 21px">SKILL</h2>
 <p>&nbsp;</p>
@@ -83,5 +92,6 @@ import { image } from '../site'
 <li>Languages: Mandarin, English</li>
 </ul>
 </div>
+</section>
   </div>
 </template>

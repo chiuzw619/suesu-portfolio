@@ -4,11 +4,11 @@ import { image } from '../site'
 
 <template>
   <div class="page wix-project">
+<section class="blk" data-label="Overview">
 <p class="a lab" style="left: -7px; top: 250px; width: 530px; font-size: 16px; line-height: 22.4px">MA Dissertation&nbsp;&nbsp;&nbsp; Goldsmiths, University of London</p>
 <h1 class="a" style="left: -7px; top: 300px; width: 980px; font-size: 45px; line-height: 63px; font-weight: 400">How Do Taiwanese Gen Z Consumers Perceive and Respond to Brand Experiences Shaped by Luxury Collaborations with Art and Cultural IPs?</h1>
 <p class="a s18 j" style="left: -7px; top: 530px; width: 667px">A mixed-methods investigation leveraging a 321-respondent survey and 10 in-depth interviews to analyze how luxury brands convert cultural alignment, emotional resonance, and IP familiarity into consumer engagement among Taiwanese Gen Z, using the LOEWE × Studio Ghibli collaboration as a primary case.</p>
 <div class="a" style="left: -7px; top: 668px; width: 980px; height: 0; border-top: 1px solid #000000"></div>
-
 <h3 class="a lab" style="left: -7px; top: 710px">Programme</h3>
 <p class="a s18" style="left: -7px; top: 762px; width: 270px">MA Luxury Brand Management<br>Goldsmiths, University of London</p>
 <h3 class="a lab" style="left: 345px; top: 710px">Methodology</h3>
@@ -21,12 +21,13 @@ import { image } from '../site'
 <p class="a s18" style="left: 345px; top: 931px; width: 328px">Taiwan<br>(East Asian market with high per-capita luxury consumption and rich cultural hybridity)</p>
 <h3 class="a lab" style="left: 718px; top: 879px">Core Strategic Takeaway</h3>
 <p class="a s18" style="left: 718px; top: 931px; width: 255px">Transitioning luxury brands from status symbols to cultural allies through authentic storytelling and emotional resonance.</p>
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="left: -7px; top: 1254px; width: 940px">Research Background &amp; Research Question</h2>
 <h3 class="a sec" style="left: 316px; top: 1374px; width: 333px">Conceptual Framework</h3>
 <img class="a" :src="image('project', 1)" alt="Conceptual framework: research background, primary research question, core theoretical dimensions and research design" style="left: 56px; top: 1465px; width: 854px; height: 571px; object-fit: cover">
 <p class="a s18 j" style="left: 218px; top: 2057px; width: 530px">Mapping the research logic from global luxury evolution to Taiwanese Gen Z's cultural perception across six theoretical dimensions.</p>
-
 <h3 class="a sec" style="left: 209px; top: 2276px; width: 552px">Early vs. Late Generation Z Perceptions</h3>
 <p class="a s20" style="left: 165px; top: 2359px; width: 640px; font-weight: 700">Early Gen Z (18-24) Scores Higher Across All Experiential Dimensions</p>
 <img class="a" :src="image('project', 2)" alt="Bar chart of mean scores for Early and Late Gen Z across six dimensions" style="left: 28px; top: 2411px; width: 910px; height: 496px; object-fit: cover">
@@ -39,7 +40,6 @@ import { image } from '../site'
 <p><b>Strategic Implication</b></p>
 <p>Early Gen Z responds strongly to visual and sensory appeal, while deeper cultural meaning becomes increasingly important for sustained engagement across age groups.</p>
 </div>
-
 <h3 class="a sec" style="left: 310px; top: 3537px; width: 345px">Correlation Divergence</h3>
 <p class="a s20" style="left: 88px; top: 3620px; width: 789px; font-weight: 700">Cultural Understanding Drives Engagement Strongest in Older Gen Z (r = 0.93 vs 0.80)</p>
 <img class="a" :src="image('project', 3)" alt="Pearson correlation comparison across Gen Z sub-groups" style="left: 47px; top: 3667px; width: 871px; height: 507px; object-fit: cover">
@@ -50,7 +50,9 @@ import { image } from '../site'
 <p>(r = 0.503; r = 0.333), suggesting that familiarity alone is not enough to create deeper engagement.<br>&nbsp;</p>
 <p><b>Gen Z Values Cultural Meaning Beyond Luxury Status</b><br>Luxury brands need to balance visual appeal with meaningful cultural translation, particularly when engaging different Gen Z age groups.</p>
 </div>
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="left: -7px; top: 4842px; width: 980px">Research Design: From Data to Insight</h2>
 <p class="a s18 j" style="left: -7px; top: 4947px; width: 744px">An explanatory sequential approach combining quantitative breadth with qualitative depth.</p>
 <h3 class="a sec" style="left: 87px; top: 5027px; width: 792px">Explanatory Sequential Mixed-Methods Research Design</h3>
@@ -65,7 +67,9 @@ import { image } from '../site'
 <p><b>Methodological Foundation: Pragmatism</b></p>
 <p>A problem-driven approach that combines different methods to build a more complete understanding of consumer perception.</p>
 </div>
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="left: -7px; top: 6902px; width: 980px; font-family: Almarai, sans-serif">Quantitative Findings</h2>
 <h3 class="a sec" style="left: 352px; top: 7027px; width: 261px">Who Did We Study?</h3>
 <div class="a s18 c" style="left: 224px; top: 7092px; width: 517px">
@@ -86,7 +90,6 @@ import { image } from '../site'
 <p><b>Research Insight</b></p>
 <p>This provides a strong basis for examining Gen Z's experiential responses and differences across age groups.</p>
 </div>
-
 <h3 class="a sec c" style="left: 260px; top: 8052px; width: 445px">What Is Connected?</h3>
 <p class="a s18 c" style="left: 205px; top: 8117px; width: 555px">Which Factors Are Most Strongly Linked to Brand Engagement?</p>
 <p class="a s20 c" style="left: 139px; top: 8221px; width: 688px; font-weight: 700">Cultural Understanding Is the Strongest Correlate of Brand Engagement</p>
@@ -105,7 +108,6 @@ import { image } from '../site'
 <p><b>Research Insight</b></p>
 <p>Cultural meaning appears to matter more than simple IP familiarity when it comes to brand engagement.</p>
 </div>
-
 <h3 class="a sec" style="left: 273px; top: 9261px; width: 419px">Do They Respond Differently?</h3>
 <p class="a s18 c" style="left: 205px; top: 9326px; width: 555px; font-family: Almarai, sans-serif">Early vs. Late Gen Z Show Different Patterns</p>
 <img class="a" :src="image('project', 7)" alt="Horizontal bar chart: Early Gen Z scores higher across all six dimensions" style="left: 129px; top: 9430px; width: 757px; height: 601px; object-fit: cover">
@@ -121,7 +123,9 @@ import { image } from '../site'
 <p><b>Research Insight</b></p>
 <p>Gen Z is not one homogeneous group. Age differences shape how consumers respond to luxury brand experiences.</p>
 </div>
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="left: -7px; top: 10606px; width: 980px">Qualitative Findings</h2>
 <div class="a s20" style="left: -2px; top: 10715px; width: 748px">
 <p><b>Beyond Numbers: Understanding Why Consumers Engage</b></p>
@@ -147,7 +151,6 @@ import { image } from '../site'
 <div class="a" style="left: 468px; top: 11385px; width: 6px; height: 34px; background: #8b0000"></div>
 <p class="a cz" style="left: 289px; top: 11441px; width: 366px">Key Consumer Insight</p>
 </div></div>
-
 <p class="a s20 c" style="left: 239px; top: 11632px; width: 487px; font-weight: 700">FOUR RECURRING THEMES</p>
 <div class="a card w" style="left: 80px; top: 11698px; width: 361px; height: 417px; box-sizing: border-box; padding: 36px 17px 0 16px; background: #5c5c5c; font-size: 17px; line-height: 23.8px">
 <p class="s20"><b>01<br>Emotional Connection</b></p>
@@ -180,7 +183,9 @@ import { image } from '../site'
 <p><b>Key Insight</b></p>
 <p>Consumers engage more deeply when a collaboration feels personally meaningful, culturally respectful and true to both the brand and the IP.</p>
 </div>
+</section>
 
+<section class="blk">
 <h2 class="a h2" style="left: -7px; top: 12802px; width: 980px">Discussion &amp; Strategic Contribution</h2>
 <div class="a s20" style="left: -7px; top: 12884px; width: 722px">
 <p><b>From Status Symbol to Cultural Ally</b></p>
@@ -201,7 +206,6 @@ import { image } from '../site'
 <div class="a" style="left: 497px; top: 13480px; width: 6px; height: 34px; background: #8b0000"></div>
 <p class="a cz" style="left: 349px; top: 13531px; width: 303px">Brand Engagement</p>
 </div></div>
-
 <h3 class="a h30" style="left: -7px; top: 13646px; width: 703px">01&nbsp; Gen Z Is Not One Homogeneous Group</h3>
 <p class="a s20" style="left: -7px; top: 13700px; width: 768px">Design for different motivations across age cohorts</p>
 <div class="a card" style="left: 17px; top: 13785px; width: 931px; height: 137px; box-sizing: border-box; padding: 18px 36px 0 35px; border: 4px solid #fb8c34; border-radius: 5px; background: #ffffff">
@@ -243,7 +247,6 @@ import { image } from '../site'
 </div>
 </div>
 <p class="a card s20 w" style="left: 17px; top: 14732px; width: 928px; height: 78px; padding: 23px 20px 0 73px; box-sizing: border-box; border: 1px solid #1d2cf3; border-radius: 5px; background: #5975a3">Key Strategic: One collaboration can speak to different generations in different ways.</p>
-
 <h3 class="a h30" style="left: -7px; top: 14938px; width: 703px">02&nbsp; Cultural IP Is More Than a Visual Asset</h3>
 <p class="a s20" style="left: -7px; top: 14992px; width: 768px">Make the collaboration authentic</p>
 <div class="a s18" style="left: 99px; top: 15074px; width: 768px">
@@ -258,7 +261,6 @@ import { image } from '../site'
 <p><b>Create a meaningful connection</b><br>Bring the two worlds together through design, storytelling and craftsmanship.</p>
 </div>
 <p class="a card s20 w" style="left: 98px; top: 15559px; width: 768px; height: 138px; padding: 26px 20px 0 93px; box-sizing: border-box; border: 1px solid #1d2cf3; border-radius: 5px; background: #5975a3">Strategic implication:<br>The goal is not to make the IP look luxurious.<br>It is to create a meaningful dialogue between the brand and the IP.</p>
-
 <h3 class="a h30" style="left: -7px; top: 15845px; width: 806px">03&nbsp; From Cultural Meaning to Personal Meaning</h3>
 <p class="a s20" style="left: -7px; top: 15899px; width: 768px">Make it personal</p>
 <p class="a s18" style="left: 99px; top: 15993px; width: 759px">Consumers connected cultural collaborations with their own memories, emotions and sense of identity.</p>
@@ -271,12 +273,12 @@ import { image } from '../site'
 <p><b>Identity</b><br>The design can become a way for consumers to express something about themselves.</p>
 </div>
 <p class="a card s20 w" style="left: 99px; top: 16506px; width: 768px; height: 110px; padding: 26px 20px 0 19px; box-sizing: border-box; border: 1px solid #1d2cf3; border-radius: 5px; background: #5975a3">Strategic implication:<br>The strongest collaborations give consumers something personal to connect with.</p>
-
 <h3 class="a h30" style="left: -7px; top: 16795px; width: 750px">04 From Recognition To Personal Meaning</h3>
 <p class="a s18" style="left: 103px; top: 16904px; width: 697px">Luxury collaborations can create deeper engagement when they move beyond being recognised to being understood and personally experienced.</p>
 <p class="a card s20 c w" style="left: 29px; top: 16997px; width: 289px; height: 128px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; padding: 0 12px; border-radius: 16px; background: #fb8c34"><span><b>Familiarity</b><br>Gets attention.</span></p>
 <p class="a card s20 c w" style="left: 338px; top: 16997px; width: 289px; height: 128px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; padding: 0 12px; border-radius: 16px; background: #183862"><span><b>Cultural Understanding</b><br>Builds meaningful connection.</span></p>
 <p class="a card c w" style="left: 647px; top: 16997px; width: 289px; height: 128px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; padding: 0 12px; border-radius: 16px; background: #5c5c5c; font-size: 20px; line-height: 24px"><span><b>Personal Meaning</b><br>Makes the collaboration<br>matter to the consumer.</span></p>
 <p class="a s20" style="left: 89px; top: 17192px; width: 787px">Strategic Shift<br><br>Luxury brands should move beyond making an IP familiar. The goal is to help consumers understand its meaning and connect it with their own experiences.</p>
+</section>
   </div>
 </template>

@@ -1,7 +1,8 @@
 <script setup>
-import { onBeforeUnmount, onMounted } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { layout, page } from './site'
 import SiteHeader from './components/SiteHeader.vue'
+import SectionIndex from './components/SectionIndex.vue'
 import HomePage from './pages/HomePage.vue'
 import ProjectPage from './pages/ProjectPage.vue'
 import ExhibitionPage from './pages/ExhibitionPage.vue'
@@ -30,8 +31,21 @@ const fitFigures = () => {
     if (mobile.matches) el.style.zoom = Math.min(1, el.parentElement.clientWidth / parseFloat(el.style.width))
   })
 }
-onMounted(() => { fitFigures(); window.addEventListener('resize', fitFigures) })
-onBeforeUnmount(() => window.removeEventListener('resize', fitFigures))
+
+// The Top button stays in the bottom-right corner once the reader has scrolled.
+const showTop = ref(false)
+const onScroll = () => { showTop.value = window.scrollY > 400 }
+const toTop = () => window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
+
+onMounted(() => {
+  fitFigures(); onScroll()
+  window.addEventListener('resize', fitFigures)
+  window.addEventListener('scroll', onScroll, { passive: true })
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', fitFigures)
+  window.removeEventListener('scroll', onScroll)
+})
 </script>
 
 <template>
@@ -39,7 +53,10 @@ onBeforeUnmount(() => window.removeEventListener('resize', fitFigures))
     <div class="wix-col" :style="{ height: `${meta.height}px` }">
       <SiteHeader />
       <main id="main"><component :is="pages[current]" /></main>
-      <a v-if="meta.top" class="a top-button" href="#top" :style="{ top: `${meta.top}px` }">Top</a>
     </div>
+    <template v-if="current !== 'home'">
+      <SectionIndex />
+      <a class="top-button" :class="{ show: showTop }" href="#top" :tabindex="showTop ? 0 : -1" :aria-hidden="!showTop" @click.prevent="toTop">Top</a>
+    </template>
   </div>
 </template>
