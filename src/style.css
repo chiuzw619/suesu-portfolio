@@ -876,6 +876,10 @@ html.night .award-name {
     aspect-ratio: 1;
     margin: 12px auto 12px;
   }
+  /* Each Core Concept loop and its caption read as one item, with room before the next. */
+  .page .blk > video.a.ar-video + p.a {
+    margin-bottom: 64px;
+  }
   .page .blk > img.a.m-small {
     width: 140px !important;
     height: auto !important;
