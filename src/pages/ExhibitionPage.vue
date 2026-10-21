@@ -263,19 +263,19 @@ onBeforeUnmount(() => {
       <img class="a" :src="image('exhibition', 14)" alt="Instagram filter and postcards"
         style="left: 815px; top: 5410px; width: 157px; height: 162px; object-fit: cover">
       <svg class="a desk" style="left: 163px; top: 5325px" width="18" height="18" viewBox="0 0 18 18" fill="none"
-        stroke="#242323" stroke-width="1.2" aria-hidden="true">
+        stroke="currentColor" stroke-width="1.2" aria-hidden="true">
         <path d="M1 9h15M11 4l5 5-5 5"></path>
       </svg>
       <svg class="a desk" style="left: 364px; top: 5325px" width="18" height="18" viewBox="0 0 18 18" fill="none"
-        stroke="#242323" stroke-width="1.2" aria-hidden="true">
+        stroke="currentColor" stroke-width="1.2" aria-hidden="true">
         <path d="M1 9h15M11 4l5 5-5 5"></path>
       </svg>
       <svg class="a desk" style="left: 575px; top: 5325px" width="18" height="18" viewBox="0 0 18 18" fill="none"
-        stroke="#242323" stroke-width="1.2" aria-hidden="true">
+        stroke="currentColor" stroke-width="1.2" aria-hidden="true">
         <path d="M1 9h15M11 4l5 5-5 5"></path>
       </svg>
       <svg class="a desk" style="left: 785px; top: 5325px" width="18" height="18" viewBox="0 0 18 18" fill="none"
-        stroke="#242323" stroke-width="1.2" aria-hidden="true">
+        stroke="currentColor" stroke-width="1.2" aria-hidden="true">
         <path d="M1 9h15M11 4l5 5-5 5"></path>
       </svg>
     </section>
