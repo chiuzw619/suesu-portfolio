@@ -87,6 +87,9 @@ html.home-night .wix-page-home header a:hover { color: #c9a27e; }
 .wix-exhibition .h2 { left: -7px; width: 980px; font-size: 40px; line-height: 52px; font-weight: 400; text-align: center; }
 .wix-exhibition .al { font-family: Almarai, "PingFang TC", "Noto Sans TC", sans-serif; }
 .wix-exhibition .awards a { text-decoration: underline; }
+.yt-poster { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; width: 100%; padding: 0; border: 0; background: none; font: inherit; cursor: pointer; }
+.yt-poster svg { transition: transform .2s; }
+.yt-poster:hover svg { transform: scale(1.08); }
 
 /* Illustration and Graphic Design */
 .ti { font-family: Cinzel, serif; font-size: 25px; line-height: 25px; letter-spacing: 1.25px; font-weight: 400; }

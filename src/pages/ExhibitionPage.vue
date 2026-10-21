@@ -1,5 +1,11 @@
 <script setup>
+import { ref } from 'vue'
 import { image } from '../site'
+
+// The video plays in place: clicking the poster swaps in the YouTube player.
+// Links inside the player (the YouTube logo, "Watch on YouTube") open a new tab.
+const VIDEO = 'cRp-Kp4mrC0'
+const playing = ref(false)
 </script>
 
 <template>
@@ -66,11 +72,14 @@ import { image } from '../site'
 <p class="c">除了實體AR展覽外，專案也包含主題網站開發、線上虛擬展覽空間及客製化個人圖鑑測驗互動功能，</p>
 <p class="c">並結合後續行銷推廣規劃，打造完整的線上線下整合體驗，提升展覽的延續性與參與者的互動深度。</p>
 </div>
-<a class="a yt" href="https://www.youtube.com/watch?v=cRp-Kp4mrC0" style="left: 164px; top: 2957px; width: 638px; height: 357px; overflow: hidden; background: #111111; display: flex; align-items: center; justify-content: center">
+<div class="a yt" style="left: 164px; top: 2957px; width: 638px; height: 357px; overflow: hidden; background: #111111">
+<iframe v-if="playing" :src="`https://www.youtube-nocookie.com/embed/${VIDEO}?autoplay=1&rel=0`" title="The Echo of Lodestar" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0"></iframe>
+<button v-else type="button" class="yt-poster" aria-label="Play video: The Echo of Lodestar" @click="playing = true">
 <img :src="image('exhibition', 1)" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.55">
 <span style="position: absolute; left: 20px; top: 16px; color: #ffffff; font-size: 18px">The Echo of Lodestar</span>
-<svg style="position: relative" width="68" height="48" viewBox="0 0 68 48" role="img" aria-label="Play video on YouTube"><rect width="68" height="48" rx="12" fill="#ff0000"></rect><path d="M27 15v18l16-9z" fill="#ffffff"></path></svg>
-</a>
+<svg style="position: relative" width="68" height="48" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#ff0000"></rect><path d="M27 15v18l16-9z" fill="#ffffff"></path></svg>
+</button>
+</div>
 </section>
 
 <section class="blk">
