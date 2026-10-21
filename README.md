@@ -1,12 +1,12 @@
 # Sue Su Portfolio
 
-Wei-Chu Su（Sue）的個人作品集，收錄品牌研究、AR 互動展覽、插畫與平面設計。
+Sue 的個人作品集，收錄品牌研究、AR 互動展覽、插畫與平面設計。
 
 線上網站：https://chiuzw619.github.io/suesu-portfolio/
 
 作品集原本架在 [Wix](https://halcyonforsue.wixsite.com/suesu) 上。這個版本保留原本的版面與留白節奏，改寫成獨立的前端網站，並在 Figma 重建一份可編輯的設計稿。重做的重點不是換一個殼，而是讓網站本身也成為作品的一部分：瀏覽的過程，要能感受到作品想傳達的氛圍。
 
-## 設計亮點
+## UI/UX 亮點
 
 ### 線條，是整個網站的語言
 
