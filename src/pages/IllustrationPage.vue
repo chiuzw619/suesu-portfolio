@@ -35,7 +35,7 @@ onBeforeUnmount(() => { window.removeEventListener('scroll', onScroll); window.r
       <img class="a" :src="`${siteRoot}images/illustration/illustration-1-cutout.webp`"
         alt="Orchid of Dream, colour illustration"
         style="left: 14px; top: 241px; width: 420px; height: 429px; object-fit: cover">
-      <img class="a line-art no-zoom" :src="`${siteRoot}images/illustration/illustration-2-cutout.webp`"
+      <img class="a line-art" :src="`${siteRoot}images/illustration/illustration-2-cutout.webp`"
         alt="Orchid of Dream, line drawing"
         style="left: 528px; top: 423px; width: 445px; height: 445px; object-fit: cover">
     </section>
