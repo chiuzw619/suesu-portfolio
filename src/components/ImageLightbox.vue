@@ -2,10 +2,12 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
 // Click (or Enter on) a content image to see it enlarged; arrows and the arrow
-// keys step through the page's zoomable images. Left out: images marked
-// .no-zoom (logos, small reference pictures, the portrait), the video poster and
-// Home's illustration (which has its own hover effect).
-const SELECTOR = 'main img:not(.yt img):not(.home-art):not(.no-zoom)'
+// keys step through the page's zoomable images. Only Sue's own originals zoom:
+// left out are the remaining Wix downloads (.avif, too low-resolution to
+// enlarge), images marked .no-zoom (logos, small reference pictures, cutouts
+// made from Wix files), the video poster and Home's illustration (which has its
+// own hover effect).
+const SELECTOR = 'main img:not(.yt img):not(.home-art):not(.no-zoom):not([src$=".avif"])'
 const images = ref([])
 const index = ref(-1)
 const current = computed(() => images.value[index.value])
@@ -65,7 +67,8 @@ onBeforeUnmount(() => {
 
 <template>
   <Transition name="lb">
-    <div v-if="current" class="lightbox" role="dialog" aria-modal="true" :aria-label="current.alt || 'Image'" @click="onBackdropClick">
+    <div v-if="current" class="lightbox" role="dialog" aria-modal="true" :aria-label="current.alt || 'Image'"
+      @click="onBackdropClick">
       <figure class="lb-figure">
         <img :key="current.src" :src="current.src" :alt="current.alt" :class="{ 'line-art': current.lineArt }">
         <figcaption v-if="current.alt">{{ current.alt }}</figcaption>
@@ -73,10 +76,14 @@ onBeforeUnmount(() => {
       <button ref="closeButton" type="button" class="lb-close" aria-label="Close" @click="close"></button>
       <template v-if="images.length > 1">
         <button type="button" class="lb-arrow lb-prev" aria-label="Previous image" @click="step(-1)">
-          <svg width="28" height="56" viewBox="0 0 28 56" aria-hidden="true"><path d="M26 2L2 28l24 26" /></svg>
+          <svg width="28" height="56" viewBox="0 0 28 56" aria-hidden="true">
+            <path d="M26 2L2 28l24 26" />
+          </svg>
         </button>
         <button type="button" class="lb-arrow lb-next" aria-label="Next image" @click="step(1)">
-          <svg width="28" height="56" viewBox="0 0 28 56" aria-hidden="true"><path d="M2 2l24 26L2 54" /></svg>
+          <svg width="28" height="56" viewBox="0 0 28 56" aria-hidden="true">
+            <path d="M2 2l24 26L2 54" />
+          </svg>
         </button>
         <p class="lb-count">{{ index + 1 }} / {{ images.length }}</p>
       </template>

@@ -15,6 +15,8 @@ const onTap = (e) => { if (e.pointerType !== 'mouse') setRain(!isOn()) }
 <template>
   <div class="page">
     <canvas ref="canvas" class="rain" aria-hidden="true"></canvas>
-    <img class="a fade home-art" :src="`${siteRoot}images/home/home-1-cutout.webp`" alt="Wei Chu Su floral illustration" style="left: 209px; top: 230px; width: 547px; height: 547px; object-fit: cover" @pointerenter="onEnter" @pointerleave="onLeave" @pointerup="onTap">
+    <img class="a fade home-art" :src="`${siteRoot}images/home/home-1-cutout.webp`" alt="Wei Chu Su floral illustration"
+      style="left: 209px; top: 230px; width: 547px; height: 547px; object-fit: cover" @pointerenter="onEnter"
+      @pointerleave="onLeave" @pointerup="onTap">
   </div>
 </template>

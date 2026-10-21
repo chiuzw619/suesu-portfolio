@@ -25,4 +25,13 @@ export const layout = {
   contact: { height: 2864 },
 }
 
-export const image = (section, number) => `${siteRoot}images/${section}/${section}-${number}.avif`
+// Images replaced with Sue's own originals are WebP (resized from originals/, at most
+// 2400px); the rest are still the .avif files downloaded from the Wix site.
+const WEBP = {
+  'project': [1, 2, 3, 4, 5, 6, 7],
+  'graphic-design': [1, 2, 3, 4, 5, 6, 12],
+  'illustration': [1, 4, 6, 7, 9, 10, 11, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32],
+  'exhibition': [2, 3, 4, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 23, 28, 29, 33, 36, 37, 38],
+}
+export const image = (section, number) =>
+  `${siteRoot}images/${section}/${section}-${number}.${WEBP[section]?.includes(number) ? 'webp' : 'avif'}`

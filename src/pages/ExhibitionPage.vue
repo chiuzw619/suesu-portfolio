@@ -1,6 +1,6 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue'
-import { image } from '../site'
+import { image, siteRoot } from '../site'
 import { useRain } from '../rain'
 
 // The video plays in place: clicking the poster swaps in the YouTube player.
@@ -48,6 +48,23 @@ const onPlayerMessage = (e) => {
 }
 const listen = () => player.value?.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: VIDEO, channel: 'widget' }), '*')
 
+// Core Concept's five AR animations loop silently with no controls, so they
+// can't be paused. Each loads when it comes near the viewport and only plays
+// while visible; with reduced motion they stay on their poster frame.
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+let videoObserver
+const watchVideos = () => {
+  videoObserver = new IntersectionObserver((entries) => {
+    for (const { target: v, isIntersecting } of entries) {
+      if (!isIntersecting) { v.pause(); continue }
+      if (!v.src) v.src = v.dataset.src
+      v.muted = true
+      if (!reducedMotion.matches) v.play().catch(() => {})
+    }
+  }, { rootMargin: '300px 0px' })
+  document.querySelectorAll('.ar-video').forEach((v) => videoObserver.observe(v))
+}
+
 // The Our Story timeline draws itself once it scrolls into view, then a dot keeps
 // travelling along it to show it is a process (see .flow in style.css).
 let flowObserver
@@ -62,6 +79,7 @@ onMounted(() => {
     flowObserver.disconnect()
   }, { threshold: 0.6 })
   flowObserver.observe(flow.value)
+  watchVideos()
 })
 onBeforeUnmount(() => {
   window.removeEventListener('message', onPlayerMessage)
@@ -69,6 +87,7 @@ onBeforeUnmount(() => {
   window.removeEventListener('resize', onScroll)
   cancelAnimationFrame(frame)
   flowObserver?.disconnect()
+  videoObserver?.disconnect()
 })
 </script>
 
@@ -87,15 +106,25 @@ onBeforeUnmount(() => {
         <p class="awards-label">作品榮獲</p>
         <div class="awards-list">
           <a class="award" href="https://isarch.org/2023-isarch-digital-award-student/" target="_blank" rel="noopener">
-            <span class="award-org">ISARCH 2023<svg class="award-arrow" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8L8 2M3 2h5v5" /></svg></span>
+            <span class="award-org">ISARCH 2023<svg class="award-arrow" width="10" height="10" viewBox="0 0 10 10"
+                aria-hidden="true">
+                <path d="M2 8L8 2M3 2h5v5" />
+              </svg></span>
             <span class="award-name">Digital Award — Exhibition Winner</span>
           </a>
-          <a class="award" href="https://dna.paris/social/zoom.php?eid=71-90619-23&amp;mibextid=Zxz2cZ" target="_blank" rel="noopener">
-            <span class="award-org">DNA Paris 2023<svg class="award-arrow" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8L8 2M3 2h5v5" /></svg></span>
+          <a class="award" href="https://dna.paris/social/zoom.php?eid=71-90619-23&amp;mibextid=Zxz2cZ" target="_blank"
+            rel="noopener">
+            <span class="award-org">DNA Paris 2023<svg class="award-arrow" width="10" height="10" viewBox="0 0 10 10"
+                aria-hidden="true">
+                <path d="M2 8L8 2M3 2h5v5" />
+              </svg></span>
             <span class="award-name">Interactive Design Honorable Mention</span>
           </a>
           <a class="award" href="https://www.moe-idc.org/Works/Content/2033" target="_blank" rel="noopener">
-            <span class="award-org">台灣 IDC 設計戰國策<svg class="award-arrow" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8L8 2M3 2h5v5" /></svg></span>
+            <span class="award-org">台灣 IDC 設計戰國策<svg class="award-arrow" width="10" height="10" viewBox="0 0 10 10"
+                aria-hidden="true">
+                <path d="M2 8L8 2M3 2h5v5" />
+              </svg></span>
             <span class="award-name">113 年度教育部國際競賽計畫 二等獎</span>
           </a>
         </div>
@@ -141,22 +170,32 @@ onBeforeUnmount(() => {
         <p class="s18">以拉丁格言 Per aspera ad astra 與赫塞《德米安：徬徨少年時》為靈感啟發，延伸出 Born、Desire、Sink、Lonesome、Reflection
           五個星球主題，描繪人生不同階段所面臨的心境與自我成長歷程。</p>
         <div ref="flow" class="fig flow" style="position: relative; width: 832px; height: 201.6px">
-          <p class="a c flow-label" style="--i: 0; left: 6px; top: 83px; width: 97px; font-size: 17px; line-height: 23.8px">哲學思考</p>
-          <p class="a c flow-label" style="--i: 1; left: 180px; top: 83px; width: 103px; font-size: 17px; line-height: 23.8px">實體空間設計</p>
-          <p class="a c flow-label" style="--i: 2; left: 365px; top: 83px; width: 97px; font-size: 17px; line-height: 23.8px">動態視覺</p>
-          <p class="a c flow-label" style="--i: 3; left: 549px; top: 83px; width: 97px; font-size: 17px; line-height: 23.8px">AR擴增實境</p>
-          <p class="a c flow-label" style="--i: 4; left: 722px; top: 83px; width: 103px; font-size: 17px; line-height: 23.8px">主題網頁</p>
+          <p class="a c flow-label"
+            style="--i: 0; left: 6px; top: 83px; width: 97px; font-size: 17px; line-height: 23.8px">哲學思考</p>
+          <p class="a c flow-label"
+            style="--i: 1; left: 180px; top: 83px; width: 103px; font-size: 17px; line-height: 23.8px">實體空間設計</p>
+          <p class="a c flow-label"
+            style="--i: 2; left: 365px; top: 83px; width: 97px; font-size: 17px; line-height: 23.8px">動態視覺</p>
+          <p class="a c flow-label"
+            style="--i: 3; left: 549px; top: 83px; width: 97px; font-size: 17px; line-height: 23.8px">AR擴增實境</p>
+          <p class="a c flow-label"
+            style="--i: 4; left: 722px; top: 83px; width: 103px; font-size: 17px; line-height: 23.8px">主題網頁</p>
           <div class="a flow-line" style="left: 65px; top: 139px; width: 706px; height: 3px; background: #000000"></div>
           <div class="a flow-dot"
-            style="--i: 0; left: 44px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
+            style="--i: 0; left: 44px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000">
+          </div>
           <div class="a flow-dot"
-            style="--i: 1; left: 221px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
+            style="--i: 1; left: 221px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000">
+          </div>
           <div class="a flow-dot"
-            style="--i: 2; left: 403px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
+            style="--i: 2; left: 403px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000">
+          </div>
           <div class="a flow-dot"
-            style="--i: 3; left: 587px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
+            style="--i: 3; left: 587px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000">
+          </div>
           <div class="a flow-dot"
-            style="--i: 4; left: 763px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
+            style="--i: 4; left: 763px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000">
+          </div>
           <div class="a flow-pulse" style="left: 60px; top: 135.5px; width: 10px; height: 10px"></div>
         </div>
         <p class="c">展覽融合哲學思考、實體空間設計、動態視覺與 AR（擴增實境）互動技術，</p>
@@ -188,21 +227,21 @@ onBeforeUnmount(() => {
 
     <section ref="core" class="blk">
       <h2 class="a h2" style="top: 3630px">Core<br>Concept</h2>
-      <img class="a" :src="image('exhibition', 5)" alt="Born AR animation"
-        style="left: 105px; top: 3797px; width: 197px; height: 198px; object-fit: cover">
+      <video class="a ar-video" :data-src="`${siteRoot}videos/exhibition-video-1.mp4`" :poster="`${siteRoot}videos/exhibition-video-1.jpg`" muted loop playsinline disablepictureinpicture aria-label="Born AR animation"
+        style="left: 105px; top: 3797px; width: 197px; height: 198px; object-fit: cover"></video>
       <p class="a c s16" style="left: 88px; top: 4011px; width: 232px">突破 Born<br><br>互動效果：點擊蛋殼<br>飛鳥破殼而出</p>
-      <img class="a" :src="image('exhibition', 6)" alt="Desire AR animation"
-        style="left: 643px; top: 3925px; width: 197px; height: 198px; object-fit: cover">
+      <video class="a ar-video" :data-src="`${siteRoot}videos/exhibition-video-2.mp4`" :poster="`${siteRoot}videos/exhibition-video-2.jpg`" muted loop playsinline disablepictureinpicture aria-label="Desire AR animation"
+        style="left: 643px; top: 3925px; width: 197px; height: 198px; object-fit: cover"></video>
       <p class="a c s16" style="left: 561px; top: 4138px; width: 363px">慾望 Desire<br><br>互動效果：點擊花叢<br>花朵逐一消散，剩下空殼</p>
-      <img class="a" :src="image('exhibition', 7)" alt="Reflection AR animation"
-        style="left: 280px; top: 4321px; width: 197px; height: 198px; object-fit: cover">
+      <video class="a ar-video" :data-src="`${siteRoot}videos/exhibition-video-3.mp4`" :poster="`${siteRoot}videos/exhibition-video-3.jpg`" muted loop playsinline disablepictureinpicture aria-label="Reflection AR animation"
+        style="left: 280px; top: 4321px; width: 197px; height: 198px; object-fit: cover"></video>
       <p class="a c s16" style="left: 212px; top: 4535px; width: 335px">自我投射
         Reflection<br><br>互動效果：點擊鏡面湖倒映出的自己，<br>兩個世界，實則是同一個自我</p>
-      <img class="a" :src="image('exhibition', 8)" alt="Lonesome AR animation"
-        style="left: 656px; top: 4564px; width: 197px; height: 198px; object-fit: cover">
+      <video class="a ar-video" :data-src="`${siteRoot}videos/exhibition-video-4.mp4`" :poster="`${siteRoot}videos/exhibition-video-4.jpg`" muted loop playsinline disablepictureinpicture aria-label="Lonesome AR animation"
+        style="left: 656px; top: 4564px; width: 197px; height: 198px; object-fit: cover"></video>
       <p class="a c s16" style="left: 618px; top: 4776px; width: 274px">孤獨 Lonesome<br><br>互動效果：點擊雲霧<br>黑暗逐漸吞噬一切</p>
-      <img class="a" :src="image('exhibition', 9)" alt="Sink AR animation"
-        style="left: 94px; top: 4711px; width: 197px; height: 198px; object-fit: cover">
+      <video class="a ar-video" :data-src="`${siteRoot}videos/exhibition-video-5.mp4`" :poster="`${siteRoot}videos/exhibition-video-5.jpg`" muted loop playsinline disablepictureinpicture aria-label="Sink AR animation"
+        style="left: 94px; top: 4711px; width: 197px; height: 198px; object-fit: cover"></video>
       <p class="a c s16" style="left: 62px; top: 4925px; width: 263px">沉淪 Sink<br><br>互動效果：點擊黑洞深淵<br>黑暗逐漸吞噬一切</p>
     </section>
 
@@ -248,7 +287,7 @@ onBeforeUnmount(() => {
           <p class="a c s18 al" style="left: 23px; top: 5855px; width: 163px">測試必要性</p>
           <p class="a c s18 al" style="left: 779px; top: 5855px; width: 163px">測試目標</p>
           <img class="a" :src="image('exhibition', 15)" alt="Usability testing flowchart"
-            style="left: -7px; top: 5912px; width: 980px; height: 331px; object-fit: cover">
+            style="left: -7px; top: 5912px; width: 980px; height: 331px; object-fit: cover; object-position: 50% 37%">
         </div>
       </div>
       <img class="a" :src="image('exhibition', 16)" alt="Usability test with a tablet"
@@ -297,7 +336,7 @@ onBeforeUnmount(() => {
         <p>觀展流程：領取平板→進入展間→用平板掃描畫→自由活動→離開展間→歸還平板</p>
       </div>
       <img class="a" :src="image('exhibition', 19)" alt="Final exhibition design render"
-        style="left: 2px; top: 7668px; width: 323px; height: 257px; object-fit: cover">
+        style="left: 2px; top: 7668px; width: 323px; height: 257px; object-fit: contain">
       <div class="a s16 al" style="left: 359px; top: 7723px; width: 614px">
         <p class="red s18">展場設計最終定案</p>
         <p>&nbsp;</p>
@@ -346,8 +385,8 @@ onBeforeUnmount(() => {
         style="left: 572px; top: 9270px; width: 401px; height: 566px; object-fit: cover">
       <div class="a s16" style="left: 18px; top: 9273px; width: 503px">
         <p class="red s18">沉浸式五感體驗</p>
-        <div class="spacer" style="position: relative; height: 201.6px"><img class="no-zoom" :src="image('exhibition', 27)"
-            alt="Hearing, feeling, sight and touch icons"
+        <div class="spacer" style="position: relative; height: 201.6px"><img class="no-zoom"
+            :src="image('exhibition', 27)" alt="Hearing, feeling, sight and touch icons"
             style="position: absolute; left: 0; top: 34px; width: 503px; height: 118px; object-fit: cover"></div>
         <p class="red">以五感沉浸作為核心策略，透過AR互動、投影光影與客製化產出，將抽象的心理狀態轉譯為可視、可聽、可觸的具體體驗。</p>
         <p>&nbsp;</p>
@@ -384,10 +423,10 @@ onBeforeUnmount(() => {
         </div>
       </div>
       <img class="a" :src="image('exhibition', 29)" alt="Unity AR scene thumbnails"
-        style="left: 511px; top: 10254px; width: 461px; height: 110px; object-fit: cover">
+        style="left: 511px; top: 10254px; width: 461px; height: 110px; object-fit: contain">
       <p class="a s16 al" style="left: 511px; top: 10371px">Unity AR Scene</p>
       <img class="a" :src="image('exhibition', 33)" alt="Born Unity code"
-        style="left: 511px; top: 10436px; width: 461px; height: 292px; object-fit: cover">
+        style="left: 511px; top: 10436px; width: 461px; height: 292px; object-fit: contain; object-position: left center">
       <p class="a s16 al" style="left: 511px; top: 10739px; width: 399px">Born Unity Code : 擊蛋殼 → 蛋殼破碎 → 鳥從中飛出</p>
       <div class="a s16 al" style="left: 22px; top: 10865px; width: 490px">
         <p class="red s18">網頁設計應用</p>
