@@ -18,7 +18,7 @@ export const nav = [
 export const layout = {
   home: { height: 814 },
   project: { height: 17668 },
-  exhibition: { height: 13101 },
+  exhibition: { height: 13236 },
   illustration: { height: 10147 },
   'graphic-design': { height: 5571 },
   contact: { height: 2864 },
