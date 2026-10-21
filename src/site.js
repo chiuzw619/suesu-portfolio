@@ -14,7 +14,8 @@ export const nav = [
 ]
 
 // Pages reproduce the Wix desktop layout: a fixed 980px column of absolutely
-// positioned elements. height is the full page height (measured from the original site).
+// positioned elements. height is the original page height, used until App.vue
+// measures the real content (and kept as-is for Home).
 export const layout = {
   home: { height: 814 },
   project: { height: 17668 },

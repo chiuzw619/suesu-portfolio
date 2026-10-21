@@ -5,7 +5,7 @@ import { image } from '../site'
 <template>
   <div class="page wix-contact">
 <section class="blk" data-label="Profile">
-<img class="a" :src="image('contact', 1)" alt="Portrait of Wei-Chu Su" style="left: 60px; top: 304px; width: 279px; height: 386px; object-fit: cover">
+<img class="no-zoom a" :src="image('contact', 1)" alt="Portrait of Wei-Chu Su" style="left: 60px; top: 304px; width: 279px; height: 386px; object-fit: cover">
 <h1 class="a" style="left: 406px; top: 352px; font-family: Cinzel, serif; font-size: 25px; line-height: 25px; letter-spacing: 1.25px; font-weight: 400">Wei-Chu Su (Sue)</h1>
 <div class="a" style="left: 406px; top: 450px; width: 435px; font-size: 16px; line-height: 16px">
 <h2 class="hd" style="line-height: 16px"><a href="mailto:sue90529@gmail.com" style="color: #8b0000">CONTACT</a></h2>

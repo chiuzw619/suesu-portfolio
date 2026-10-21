@@ -1,12 +1,15 @@
 import { onBeforeUnmount, onMounted } from 'vue'
 
 // Night mode shared by Home (hovering the illustration) and Exhibition (while the
-// video plays): the page turns #252320 (html.night in style.css) and thin white
-// strokes fall like rain on a fixed canvas, echoing the illustration's line work.
+// video plays, and while scrolling through Core Concept): the page fades towards
+// #252320 and thin white strokes fall like rain on a fixed canvas, echoing the
+// illustration's line work. setRain takes true/false or a 0–1 strength, which
+// drives --night (background) and the rain's opacity; html.night (light text) is
+// on from half strength.
 export function useRain(canvas) {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)')
   const SLANT = 0.12
-  let ctx, w, h, drops = [], raf = 0, on = false, alpha = 0
+  let ctx, w, h, drops = [], raf = 0, target = 0, alpha = 0
 
   const drop = (anywhere) => ({
     x: Math.random() * (w + h * SLANT),
@@ -27,7 +30,7 @@ export function useRain(canvas) {
 
   function draw() {
     const still = reduced.matches
-    alpha = still ? (on ? 1 : 0) : alpha + ((on ? 1 : 0) - alpha) * 0.08
+    alpha = still ? target : alpha + (target - alpha) * 0.08
     ctx.clearRect(0, 0, w, h)
     ctx.lineWidth = 0.8
     ctx.lineCap = 'round'
@@ -40,13 +43,16 @@ export function useRain(canvas) {
       ctx.lineTo(d.x + d.len * SLANT, d.y - d.len)
       ctx.stroke()
     }
-    raf = !still && (on || alpha > 0.01) ? requestAnimationFrame(draw) : 0
+    raf = !still && (target > 0 || alpha > 0.01) ? requestAnimationFrame(draw) : 0
   }
 
   const setRain = (value) => {
-    if (value === on) return
-    on = value
-    document.documentElement.classList.toggle('night', on)
+    const level = Math.max(0, Math.min(1, Number(value)))
+    if (level === target) return
+    target = level
+    const root = document.documentElement
+    root.style.setProperty('--night', level)
+    root.classList.toggle('night', level >= 0.5)
     if (!raf) draw()
   }
 
@@ -55,7 +61,8 @@ export function useRain(canvas) {
     cancelAnimationFrame(raf)
     window.removeEventListener('resize', resize)
     document.documentElement.classList.remove('night')
+    document.documentElement.style.removeProperty('--night')
   })
 
-  return { setRain, isOn: () => on }
+  return { setRain, isOn: () => target > 0 }
 }

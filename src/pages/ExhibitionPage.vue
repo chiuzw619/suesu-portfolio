@@ -10,8 +10,30 @@ import { useRain } from '../rain'
 const VIDEO = 'cRp-Kp4mrC0'
 const playing = ref(false)
 const player = ref(null)
+const flow = ref(null)
 const canvas = ref(null)
 const { setRain } = useRain(canvas)
+
+// Night mode has two sources: the playing video, and scrolling through Core
+// Concept and Interaction Process, where it ramps in over RAMP px after Core
+// Concept and back out before Usability Testing.
+const core = ref(null)
+const usability = ref(null)
+const RAMP = 400
+let videoOn = false, scrollLevel = 0
+const apply = () => setRain(Math.max(videoOn ? 1 : 0, scrollLevel))
+const sectionTop = (el) => Math.min(...[...el.children].map((c) => c.getBoundingClientRect().top)) + window.scrollY
+const clamp = (v) => Math.max(0, Math.min(1, v))
+let frame = 0
+const onScroll = () => {
+  if (frame) return
+  frame = requestAnimationFrame(() => {
+    frame = 0
+    const line = window.scrollY + window.innerHeight / 2
+    scrollLevel = clamp((line - sectionTop(core.value)) / RAMP) * clamp((sectionTop(usability.value) - line) / RAMP)
+    apply()
+  })
+}
 
 const PLAYING = 1, PAUSED = 2, ENDED = 0
 const onPlayerMessage = (e) => {
@@ -19,13 +41,35 @@ const onPlayerMessage = (e) => {
   let data
   try { data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data } catch { return }
   const state = data?.event === 'onStateChange' ? data.info : data?.info?.playerState
-  if (state === PLAYING) setRain(true)
-  else if (state === PAUSED || state === ENDED) setRain(false)
+  if (state === PLAYING) videoOn = true
+  else if (state === PAUSED || state === ENDED) videoOn = false
+  else return
+  apply()
 }
 const listen = () => player.value?.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: VIDEO, channel: 'widget' }), '*')
 
-onMounted(() => window.addEventListener('message', onPlayerMessage))
-onBeforeUnmount(() => window.removeEventListener('message', onPlayerMessage))
+// The Our Story timeline draws itself once it scrolls into view, then a dot keeps
+// travelling along it to show it is a process (see .flow in style.css).
+let flowObserver
+onMounted(() => {
+  window.addEventListener('message', onPlayerMessage)
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('resize', onScroll)
+  onScroll()
+  flowObserver = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return
+    flow.value.classList.add('in')
+    flowObserver.disconnect()
+  }, { threshold: 0.6 })
+  flowObserver.observe(flow.value)
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('message', onPlayerMessage)
+  window.removeEventListener('scroll', onScroll)
+  window.removeEventListener('resize', onScroll)
+  cancelAnimationFrame(frame)
+  flowObserver?.disconnect()
+})
 </script>
 
 <template>
@@ -53,7 +97,7 @@ onBeforeUnmount(() => window.removeEventListener('message', onPlayerMessage))
 
     <section class="blk">
       <h2 class="a h2" style="top: 1176px">Research Background</h2>
-      <img class="a" :src="image('exhibition', 2)" alt="Demian book cover"
+      <img class="no-zoom a" :src="image('exhibition', 2)" alt="Demian book cover"
         style="left: 43px; top: 1296px; width: 120px; height: 192px; object-fit: cover">
       <div class="a s16" style="left: 220px; top: 1334px; width: 753px">
         <p class="red" style="font-size: 18px">文獻研究：以心理學文本作為概念原型</p>
@@ -75,7 +119,7 @@ onBeforeUnmount(() => window.removeEventListener('message', onPlayerMessage))
           Bloom為參考，希望打造出多重感官沉浸式展覽作為指標案例。該案例聚焦人與自然的共生關係，透過裝置藝術結合AR技術，形成開放式的體驗結構。在這樣的形式下訪客能夠以在既定框架內，自行發展出個人化的互動路徑與詮釋方式。此開放詮釋、鼓勵自發性互動的設計原則，是The
           Echo of Lodestar在展場動線規劃、AR互動觸發機制設計上的重要參考依據，也影響後續在觀展者主動探索、產出個人化星球圖鑑方面的核心體驗邏輯。</p>
       </div>
-      <img class="a" :src="image('exhibition', 4)" alt="The Art of Bloom exhibition reference"
+      <img class="no-zoom a" :src="image('exhibition', 4)" alt="The Art of Bloom exhibition reference"
         style="left: 793px; top: 2003px; width: 235px; height: 159px; object-fit: cover">
     </section>
 
@@ -87,23 +131,24 @@ onBeforeUnmount(() => window.removeEventListener('message', onPlayerMessage))
         <p class="s18">&nbsp;</p>
         <p class="s18">以拉丁格言 Per aspera ad astra 與赫塞《德米安：徬徨少年時》為靈感啟發，延伸出 Born、Desire、Sink、Lonesome、Reflection
           五個星球主題，描繪人生不同階段所面臨的心境與自我成長歷程。</p>
-        <div class="fig" style="position: relative; width: 832px; height: 201.6px">
-          <p class="a c" style="left: 6px; top: 83px; width: 97px; font-size: 17px; line-height: 23.8px">哲學思考</p>
-          <p class="a c" style="left: 180px; top: 83px; width: 103px; font-size: 17px; line-height: 23.8px">實體空間設計</p>
-          <p class="a c" style="left: 365px; top: 83px; width: 97px; font-size: 17px; line-height: 23.8px">動態視覺</p>
-          <p class="a c" style="left: 549px; top: 83px; width: 97px; font-size: 17px; line-height: 23.8px">AR擴增實境</p>
-          <p class="a c" style="left: 722px; top: 83px; width: 103px; font-size: 17px; line-height: 23.8px">主題網頁</p>
-          <div class="a" style="left: 65px; top: 139px; width: 706px; height: 3px; background: #000000"></div>
-          <div class="a"
-            style="left: 44px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
-          <div class="a"
-            style="left: 221px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
-          <div class="a"
-            style="left: 403px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
-          <div class="a"
-            style="left: 587px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
-          <div class="a"
-            style="left: 763px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
+        <div ref="flow" class="fig flow" style="position: relative; width: 832px; height: 201.6px">
+          <p class="a c flow-label" style="--i: 0; left: 6px; top: 83px; width: 97px; font-size: 17px; line-height: 23.8px">哲學思考</p>
+          <p class="a c flow-label" style="--i: 1; left: 180px; top: 83px; width: 103px; font-size: 17px; line-height: 23.8px">實體空間設計</p>
+          <p class="a c flow-label" style="--i: 2; left: 365px; top: 83px; width: 97px; font-size: 17px; line-height: 23.8px">動態視覺</p>
+          <p class="a c flow-label" style="--i: 3; left: 549px; top: 83px; width: 97px; font-size: 17px; line-height: 23.8px">AR擴增實境</p>
+          <p class="a c flow-label" style="--i: 4; left: 722px; top: 83px; width: 103px; font-size: 17px; line-height: 23.8px">主題網頁</p>
+          <div class="a flow-line" style="left: 65px; top: 139px; width: 706px; height: 3px; background: #000000"></div>
+          <div class="a flow-dot"
+            style="--i: 0; left: 44px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
+          <div class="a flow-dot"
+            style="--i: 1; left: 221px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
+          <div class="a flow-dot"
+            style="--i: 2; left: 403px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
+          <div class="a flow-dot"
+            style="--i: 3; left: 587px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
+          <div class="a flow-dot"
+            style="--i: 4; left: 763px; top: 129px; width: 21px; height: 21px; border-radius: 50%; background: #000000"></div>
+          <div class="a flow-pulse" style="left: 60px; top: 135.5px; width: 10px; height: 10px"></div>
         </div>
         <p class="c">展覽融合哲學思考、實體空間設計、動態視覺與 AR（擴增實境）互動技術，</p>
         <p class="c">觀展者可透過平板設備掃描展場視覺內容，在沉浸式展覽氛圍中展開互動體驗，</p>
@@ -132,7 +177,7 @@ onBeforeUnmount(() => window.removeEventListener('message', onPlayerMessage))
       </div>
     </section>
 
-    <section class="blk">
+    <section ref="core" class="blk">
       <h2 class="a h2" style="top: 3600px">Core<br>Concept</h2>
       <img class="a" :src="image('exhibition', 5)" alt="Born AR animation"
         style="left: 105px; top: 3767px; width: 197px; height: 198px; object-fit: cover">
@@ -187,7 +232,7 @@ onBeforeUnmount(() => window.removeEventListener('message', onPlayerMessage))
       </svg>
     </section>
 
-    <section class="blk">
+    <section ref="usability" class="blk">
       <h2 class="a h2" style="top: 5681px; left: -10px">Usability Testing of the Process</h2>
       <div class="a fig" style="left: -7px; top: 5825px; width: 980px; height: 388px">
         <div style="position: absolute; left: 7px; top: -5825px; width: 1100px">
@@ -260,9 +305,9 @@ onBeforeUnmount(() => window.removeEventListener('message', onPlayerMessage))
       <h2 class="a h2" style="top: 8048px">AR &amp; Motion Design</h2>
       <img class="a" :src="image('exhibition', 20)" alt="After Effects motion design"
         style="left: -7px; top: 8204px; width: 600px; height: 270px; object-fit: cover">
-      <img class="a keep" :src="image('exhibition', 21)" alt="Procreate logo"
+      <img class="no-zoom a keep" :src="image('exhibition', 21)" alt="Procreate logo"
         style="left: 827px; top: 8330px; width: 56px; height: 55px; object-fit: cover">
-      <img class="a keep" :src="image('exhibition', 22)" alt="After Effects logo"
+      <img class="no-zoom a keep" :src="image('exhibition', 22)" alt="After Effects logo"
         style="left: 903px; top: 8330px; width: 56px; height: 55px; object-fit: cover">
       <div class="a s16 al" style="left: 626px; top: 8358px; width: 347px">
         <p class="red s18">動態效果製作</p>
@@ -271,11 +316,11 @@ onBeforeUnmount(() => window.removeEventListener('message', onPlayerMessage))
       </div>
       <img class="a" :src="image('exhibition', 23)" alt="Born Spark AR program screenshot"
         style="left: 9px; top: 8603px; width: 567px; height: 309px; object-fit: cover">
-      <img class="a keep" :src="image('exhibition', 24)" alt="Spark AR logo"
+      <img class="no-zoom a keep" :src="image('exhibition', 24)" alt="Spark AR logo"
         style="left: 769px; top: 8687px; width: 59px; height: 70px; object-fit: cover">
-      <img class="a keep" :src="image('exhibition', 25)" alt="Unity logo"
+      <img class="no-zoom a keep" :src="image('exhibition', 25)" alt="Unity logo"
         style="left: 834px; top: 8696px; width: 62px; height: 61px; object-fit: cover">
-      <img class="a keep" :src="image('exhibition', 26)" alt="Vuforia logo"
+      <img class="no-zoom a keep" :src="image('exhibition', 26)" alt="Vuforia logo"
         style="left: 907px; top: 8696px; width: 53px; height: 61px; object-fit: cover">
       <div class="a s16 al" style="left: 620px; top: 8733px; width: 353px">
         <p class="red s18">AR動態效果</p>
@@ -292,7 +337,7 @@ onBeforeUnmount(() => window.removeEventListener('message', onPlayerMessage))
         style="left: 572px; top: 9240px; width: 401px; height: 566px; object-fit: cover">
       <div class="a s16" style="left: 18px; top: 9243px; width: 503px">
         <p class="red s18">沉浸式五感體驗</p>
-        <div class="spacer" style="position: relative; height: 201.6px"><img :src="image('exhibition', 27)"
+        <div class="spacer" style="position: relative; height: 201.6px"><img class="no-zoom" :src="image('exhibition', 27)"
             alt="Hearing, feeling, sight and touch icons"
             style="position: absolute; left: 0; top: 34px; width: 503px; height: 118px; object-fit: cover"></div>
         <p class="red">以五感沉浸作為核心策略，透過AR互動、投影光影與客製化產出，將抽象的心理狀態轉譯為可視、可聽、可觸的具體體驗。</p>
@@ -318,11 +363,11 @@ onBeforeUnmount(() => window.removeEventListener('message', onPlayerMessage))
       </div>
       <div class="a fig" style="left: 73px; top: 10489px; width: 331px; height: 130px">
         <div style="position: absolute; left: -73px; top: -10489px; width: 1100px">
-          <img class="a" :src="image('exhibition', 30)" alt="Spark AR logo"
+          <img class="no-zoom a" :src="image('exhibition', 30)" alt="Spark AR logo"
             style="left: 73px; top: 10489px; width: 83px; height: 98px; object-fit: cover">
-          <img class="a" :src="image('exhibition', 31)" alt="Unity logo"
+          <img class="no-zoom a" :src="image('exhibition', 31)" alt="Unity logo"
             style="left: 201px; top: 10495px; width: 87px; height: 86px; object-fit: cover">
-          <img class="a" :src="image('exhibition', 32)" alt="Vuforia logo"
+          <img class="no-zoom a" :src="image('exhibition', 32)" alt="Vuforia logo"
             style="left: 330px; top: 10495px; width: 74px; height: 86px; object-fit: cover">
           <p class="a s18" style="left: 73px; top: 10594px">Spark AR</p>
           <p class="a s18" style="left: 221px; top: 10594px">Unity</p>
@@ -344,9 +389,9 @@ onBeforeUnmount(() => window.removeEventListener('message', onPlayerMessage))
       </div>
       <div class="a fig" style="left: 544px; top: 10878px; width: 400px; height: 100px">
         <div style="position: absolute; left: -544px; top: -10878px; width: 1100px">
-          <img class="a" :src="image('exhibition', 34)" alt="Render logo"
+          <img class="no-zoom a" :src="image('exhibition', 34)" alt="Render logo"
             style="left: 544px; top: 10878px; width: 195px; height: 74px; object-fit: cover">
-          <img class="a" :src="image('exhibition', 35)" alt="Ruby on Rails logo"
+          <img class="no-zoom a" :src="image('exhibition', 35)" alt="Ruby on Rails logo"
             style="left: 780px; top: 10878px; width: 164px; height: 62px; object-fit: cover">
           <p class="a s18" style="left: 580px; top: 10952px">Render 雲平台</p>
           <p class="a s18" style="left: 800px; top: 10952px">Ruby on Rails</p>
